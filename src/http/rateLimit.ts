@@ -46,35 +46,49 @@ export const clientKey = (
   return Option.getOrElse(request.remoteAddress, () => 'unknown');
 };
 
-// A fixed one-minute window per client, held in memory. That is only sound
-// while the API runs as a single process; a restart resets every counter.
-export const fixedWindow = (limit: number, now: () => number, maxClients = MAX_CLIENTS) => {
-  // In the order the windows opened. They all last the same time, so the
-  // expired ones are always at the front.
-  const windows = new Map<string, { count: number; resetAt: number }>();
+// A sliding one-minute window per client, held in memory. Each client keeps the
+// timestamps of its hits in the last WINDOW_MS, so the limit holds over every
+// rolling minute. A fixed window instead resets on a boundary, which lets a
+// client send the whole quota just before it and again just after — up to twice
+// the limit in an instant. Only sound as a single process; a restart clears it.
+export const slidingWindow = (limit: number, now: () => number, maxClients = MAX_CLIENTS) => {
+  // Keyed in last-seen order (each hit re-inserts the client at the end), so the
+  // least recently seen is at the front and can be dropped first.
+  const clients = new Map<string, number[]>();
 
   return (client: string): Hit => {
     const currentTime = now();
+    const windowStart = currentTime - WINDOW_MS;
 
-    for (const [key, window] of windows) {
-      if (window.resetAt > currentTime) break;
-      windows.delete(key);
+    // Drop clients whose most recent hit has aged out. The front is the least
+    // recently seen, so once one is still in-window the rest are too.
+    for (const [key, hits] of clients) {
+      if (hits[hits.length - 1]! > windowStart) break;
+      clients.delete(key);
     }
 
-    let window = windows.get(client);
-    if (!window || window.resetAt <= currentTime) {
-      windows.delete(client);
-      if (windows.size >= maxClients) windows.delete(windows.keys().next().value!);
-      window = { count: 0, resetAt: currentTime + WINDOW_MS };
-      windows.set(client, window);
+    const hits = clients.get(client) ?? [];
+    clients.delete(client);
+    while (hits.length > 0 && hits[0]! <= windowStart) hits.shift();
+
+    const exceeded = hits.length >= limit;
+    if (!exceeded) hits.push(currentTime);
+
+    if (hits.length === 0) {
+      // Blocked with nothing left in the window: nothing to remember.
+      if (clients.size >= maxClients) clients.delete(clients.keys().next().value!);
+      return { limit, remaining: limit, secondsUntilReset: WINDOW_MS / 1000, exceeded };
     }
-    window.count++;
+
+    if (clients.size >= maxClients && !clients.has(client)) clients.delete(clients.keys().next().value!);
+    clients.set(client, hits);
 
     return {
       limit,
-      remaining: Math.max(0, limit - window.count),
-      secondsUntilReset: Math.max(1, Math.ceil((window.resetAt - currentTime) / 1000)),
-      exceeded: window.count > limit,
+      remaining: Math.max(0, limit - hits.length),
+      // When the oldest hit still in the window ages out, one slot frees up.
+      secondsUntilReset: Math.max(1, Math.ceil((hits[0]! + WINDOW_MS - currentTime) / 1000)),
+      exceeded,
     };
   };
 };

@@ -69,6 +69,28 @@ keys each client correctly, and the per-client limit is still enforced:
 `test/api.test.ts` (and `test/helpers.ts` threads the new config). `pnpm check`
 passes: 132 tests, 0 failures.
 
+## Finding 2: rate-limit burst at the window boundary (fixed-window)
+
+**Where:** the rate-limit counter in [src/http/rateLimit.ts](src/http/rateLimit.ts).
+
+**Root cause.** The limiter used a fixed one-minute window that resets on a
+boundary. A client can spend its whole quota in the last instant of one window
+and the whole quota again in the first instant of the next — up to twice the
+configured rate in a moment. This is independent of Finding 1 (that was the
+client *key*; this is the *window algorithm*) and needs no header forgery or
+direct-origin access: it reproduces on a single instance.
+
+**Proof (deterministic, mocked clock, limit 60/min):** filling the tail of one
+window and the head of the next accepted **119 requests in a ~1 ms span — 2.0×
+the limit**.
+
+**Fix.** Replaced the fixed window with a **sliding window** (per-client log of
+hit timestamps within the last minute), so the limit holds over every rolling
+minute. The same proof now accepts **60 — 1.0× the limit**. `RateLimit-Reset`
+stays `60` and every existing rate-limit test passes, so the pinned HTTP
+contract is unchanged; a regression test pins the boundary behaviour. Severity
+**Low** (brief ~2× overage; no data impact).
+
 ## Checked and found solid (no change needed)
 
 - **Input validation.** Oversized bodies rejected (413, or a fast connection drop

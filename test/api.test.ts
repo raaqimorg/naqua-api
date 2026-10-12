@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { Option } from 'effect';
 import { HttpServerRequest } from 'effect/http';
 import { describe, test } from 'node:test';
-import { clientKey, fixedWindow } from '../src/http/rateLimit.ts';
+import { clientKey, slidingWindow } from '../src/http/rateLimit.ts';
 import { AMBIGUOUS_TICKER, app, calculate, dataset, disputedApp, get, json, makeTestApp } from './helpers.ts';
 
 describe('GET /v1/companies', () => {
@@ -397,13 +397,30 @@ describe('rate limiting', () => {
   });
 
   test('tracks a bounded number of clients, dropping the oldest', () => {
-    const hit = fixedWindow(1, () => 0, 2);
+    const hit = slidingWindow(1, () => 0, 2);
 
     assert.equal(hit('1.1.1.1').exceeded, false);
     assert.equal(hit('1.1.1.1').exceeded, true);
     hit('2.2.2.2');
     hit('3.3.3.3');
     assert.equal(hit('1.1.1.1').exceeded, false);
+  });
+
+  test('holds the limit across a window boundary (no fixed-window burst)', () => {
+    let now = 0;
+    const hit = slidingWindow(60, () => now);
+    const client = '203.0.113.7';
+
+    hit(client); // opens the window at t=0
+    now = 59_999; // fill the rest of the window at its very end
+    let accepted = 0;
+    for (let i = 0; i < 60; i++) if (!hit(client).exceeded) accepted++;
+
+    now = 60_000; // the fixed-window reset point
+    for (let i = 0; i < 60; i++) if (!hit(client).exceeded) accepted++;
+
+    // A fixed window would accept ~120 here; a sliding one holds it to the limit.
+    assert.ok(accepted <= 60, `accepted ${accepted} across the boundary, expected <= 60`);
   });
 
   test('does not count the health check', async () => {
