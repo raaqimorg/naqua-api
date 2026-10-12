@@ -9,11 +9,11 @@ import {
   HttpServerResponse,
 } from 'effect/http';
 import { HttpApiMiddleware } from 'effect/http-api';
-import { IS_RENDER, MAX_BODY_BYTES, REQUESTS_PER_MINUTE } from '../config.ts';
+import { CF_ORIGIN_SECRET, IS_RENDER, MAX_BODY_BYTES, REQUESTS_PER_MINUTE } from '../config.ts';
 import { Dataset } from '../data/dataset.ts';
 import { issueList } from '../data/schema.ts';
 import { PayloadTooLarge, RateLimited, ValidationError, errorBody } from './errors.ts';
-import { clientKey, fixedWindow } from './rateLimit.ts';
+import { clientKey, slidingWindow } from './rateLimit.ts';
 import { MAX_ENTRIES_PER_REQUEST } from './schemas.ts';
 
 // The router's middleware wraps every request, matched or not. The API's
@@ -140,12 +140,21 @@ export class RateLimit extends HttpApiMiddleware.Service<RateLimit>()('naqua/Rat
     Effect.gen(function* () {
       // Read while the layer is built, which is how a test's clock reaches it.
       const clock = yield* Clock.Clock;
-      const hit = fixedWindow(yield* REQUESTS_PER_MINUTE, () => clock.currentTimeMillisUnsafe());
+      const hit = slidingWindow(yield* REQUESTS_PER_MINUTE, () => clock.currentTimeMillisUnsafe());
       const isRender = yield* IS_RENDER;
+      const originSecret = yield* CF_ORIGIN_SECRET;
+
+      // Trusting CF-Connecting-IP without origin proof lets a request straight to
+      // the origin forge it and bypass the limit. Make the residual risk visible.
+      if (isRender && originSecret === '') {
+        yield* Effect.logWarning(
+          'Rate limit trusts CF-Connecting-IP without origin proof. Lock the origin to Cloudflare or set CF_ORIGIN_SECRET.',
+        );
+      }
 
       return RateLimit.of(
         Effect.fn(function* (handler) {
-          const { limit, remaining, secondsUntilReset, exceeded } = hit(clientKey(yield* HttpServerRequest.HttpServerRequest, isRender));
+          const { limit, remaining, secondsUntilReset, exceeded } = hit(clientKey(yield* HttpServerRequest.HttpServerRequest, isRender, originSecret));
           yield* setResponseHeaders({
             'RateLimit-Limit': String(limit),
             'RateLimit-Remaining': String(remaining),

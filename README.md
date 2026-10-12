@@ -77,8 +77,18 @@ The API is then at http://localhost:3000, which redirects to its interactive doc
 | `PORT`                | `3000`                     | HTTP listening port                                    |
 | `PUBLIC_URL`          | `https://api.trynaqua.com` | Server URL shown in the OpenAPI document and the docs  |
 | `REQUESTS_PER_MINUTE` | `60`                       | Requests per minute per IP address, a positive integer |
+| `CF_ORIGIN_SECRET`    | _(empty)_                  | See [Rate limiting behind a proxy](#rate-limiting-behind-a-proxy) |
 
 For interactive docs that send requests to your local server, start it with `PUBLIC_URL=http://localhost:3000`.
+
+### Rate limiting behind a proxy
+
+The rate limit keys each request to its client IP. On Render (`RENDER=true`) the client IP is read from the `CF-Connecting-IP` header, because the Render ingress sets it and strips any client-supplied value. That is only safe while every request reaches the server through Cloudflare. If the origin is reachable directly — a Render service is public at `*.onrender.com` by default — a client can set `CF-Connecting-IP` itself, give each request a fresh value, and bypass the limit entirely.
+
+Close that off in one of two ways:
+
+- **Lock the origin to Cloudflare** (recommended): restrict the origin to Cloudflare's IP ranges, or use [Authenticated Origin Pulls](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/), so nothing but the edge can reach it.
+- **Set `CF_ORIGIN_SECRET`** as defence in depth: add a Cloudflare Transform Rule that sets the `X-Naqua-Origin-Secret` request header to the same value. The server then trusts `CF-Connecting-IP` only on requests that carry the matching secret, which a request straight to the origin cannot supply. Left empty, the header is trusted whenever `RENDER=true`, as before.
 
 ## API
 

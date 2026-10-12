@@ -24,17 +24,25 @@ export const makeTestApp = ({
   dataset,
   requestsPerMinute = 1_000_000,
   isRender = false,
+  originSecret = '',
   now,
 }: {
   dataset: LoadedDataset;
   requestsPerMinute?: number;
   isRender?: boolean;
+  originSecret?: string;
   now?: () => number;
 }) => {
   const app = AppLayer.pipe(
     Layer.provide([
       Layer.succeed(Dataset, dataset),
-      ConfigProvider.layer(ConfigProvider.fromUnknown({ REQUESTS_PER_MINUTE: requestsPerMinute, RENDER: String(isRender) })),
+      ConfigProvider.layer(
+        ConfigProvider.fromUnknown({
+          REQUESTS_PER_MINUTE: requestsPerMinute,
+          RENDER: String(isRender),
+          CF_ORIGIN_SECRET: originSecret,
+        }),
+      ),
       now ? Layer.succeed(Clock.Clock, clockFrom(now)) : Layer.empty,
       HttpServer.layerServices,
     ]),

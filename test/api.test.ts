@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { Option } from 'effect';
 import { HttpServerRequest } from 'effect/http';
 import { describe, test } from 'node:test';
-import { clientKey, fixedWindow } from '../src/http/rateLimit.ts';
+import { clientKey, slidingWindow } from '../src/http/rateLimit.ts';
 import { AMBIGUOUS_TICKER, app, calculate, dataset, disputedApp, get, json, makeTestApp } from './helpers.ts';
 
 describe('GET /v1/companies', () => {
@@ -362,6 +362,26 @@ describe('rate limiting', () => {
     }
   });
 
+  test('an origin secret stops a forged CF-Connecting-IP from refreshing quota', async () => {
+    const limited = makeTestApp({ dataset, requestsPerMinute: 1, isRender: true, originSecret: 'edge-secret', now: () => 0 });
+
+    // No secret header: the request did not come through the edge, so every
+    // CF-Connecting-IP collapses to the socket key and cannot refresh the quota.
+    assert.equal((await limited.request('/v1/meta', { headers: { 'CF-Connecting-IP': '203.0.113.1' } })).status, 200);
+    assert.equal((await limited.request('/v1/meta', { headers: { 'CF-Connecting-IP': '203.0.113.2' } })).status, 429);
+    assert.equal((await limited.request('/v1/meta', { headers: { 'CF-Connecting-IP': '203.0.113.3', 'X-Naqua-Origin-Secret': 'wrong' } })).status, 429);
+  });
+
+  test('an origin secret still lets the edge key distinct clients', async () => {
+    const limited = makeTestApp({ dataset, requestsPerMinute: 1, isRender: true, originSecret: 'edge-secret', now: () => 0 });
+    const viaEdge = (ip: string) =>
+      limited.request('/v1/meta', { headers: { 'CF-Connecting-IP': ip, 'X-Naqua-Origin-Secret': 'edge-secret' } });
+
+    assert.equal((await viaEdge('203.0.113.1')).status, 200);
+    assert.equal((await viaEdge('203.0.113.1')).status, 429);
+    assert.equal((await viaEdge('203.0.113.2')).status, 200);
+  });
+
   test('socket fallback preserves distinct directly connected clients', () => {
     const headers = { 'CF-Connecting-IP': '198.51.100.99', 'X-Forwarded-For': '198.51.100.98' };
     for (const ip of ['192.0.2.1', '192.0.2.2', '2001:db8::1']) {
@@ -377,13 +397,30 @@ describe('rate limiting', () => {
   });
 
   test('tracks a bounded number of clients, dropping the oldest', () => {
-    const hit = fixedWindow(1, () => 0, 2);
+    const hit = slidingWindow(1, () => 0, 2);
 
     assert.equal(hit('1.1.1.1').exceeded, false);
     assert.equal(hit('1.1.1.1').exceeded, true);
     hit('2.2.2.2');
     hit('3.3.3.3');
     assert.equal(hit('1.1.1.1').exceeded, false);
+  });
+
+  test('holds the limit across a window boundary (no fixed-window burst)', () => {
+    let now = 0;
+    const hit = slidingWindow(60, () => now);
+    const client = '203.0.113.7';
+
+    hit(client); // opens the window at t=0
+    now = 59_999; // fill the rest of the window at its very end
+    let accepted = 0;
+    for (let i = 0; i < 60; i++) if (!hit(client).exceeded) accepted++;
+
+    now = 60_000; // the fixed-window reset point
+    for (let i = 0; i < 60; i++) if (!hit(client).exceeded) accepted++;
+
+    // A fixed window would accept ~120 here; a sliding one holds it to the limit.
+    assert.ok(accepted <= 60, `accepted ${accepted} across the boundary, expected <= 60`);
   });
 
   test('does not count the health check', async () => {
