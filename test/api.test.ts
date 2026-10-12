@@ -362,6 +362,26 @@ describe('rate limiting', () => {
     }
   });
 
+  test('an origin secret stops a forged CF-Connecting-IP from refreshing quota', async () => {
+    const limited = makeTestApp({ dataset, requestsPerMinute: 1, isRender: true, originSecret: 'edge-secret', now: () => 0 });
+
+    // No secret header: the request did not come through the edge, so every
+    // CF-Connecting-IP collapses to the socket key and cannot refresh the quota.
+    assert.equal((await limited.request('/v1/meta', { headers: { 'CF-Connecting-IP': '203.0.113.1' } })).status, 200);
+    assert.equal((await limited.request('/v1/meta', { headers: { 'CF-Connecting-IP': '203.0.113.2' } })).status, 429);
+    assert.equal((await limited.request('/v1/meta', { headers: { 'CF-Connecting-IP': '203.0.113.3', 'X-Naqua-Origin-Secret': 'wrong' } })).status, 429);
+  });
+
+  test('an origin secret still lets the edge key distinct clients', async () => {
+    const limited = makeTestApp({ dataset, requestsPerMinute: 1, isRender: true, originSecret: 'edge-secret', now: () => 0 });
+    const viaEdge = (ip: string) =>
+      limited.request('/v1/meta', { headers: { 'CF-Connecting-IP': ip, 'X-Naqua-Origin-Secret': 'edge-secret' } });
+
+    assert.equal((await viaEdge('203.0.113.1')).status, 200);
+    assert.equal((await viaEdge('203.0.113.1')).status, 429);
+    assert.equal((await viaEdge('203.0.113.2')).status, 200);
+  });
+
   test('socket fallback preserves distinct directly connected clients', () => {
     const headers = { 'CF-Connecting-IP': '198.51.100.99', 'X-Forwarded-For': '198.51.100.98' };
     for (const ip of ['192.0.2.1', '192.0.2.2', '2001:db8::1']) {

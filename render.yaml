@@ -19,5 +19,11 @@ services:
         value: "24"
       - key: COREPACK_ENABLE_DOWNLOAD_PROMPT
         value: "0"
+      # Defence in depth for the rate limit: lock the origin to Cloudflare, or
+      # set this and a matching Cloudflare Transform Rule that adds the
+      # `X-Naqua-Origin-Secret` header. See the README. Leave unset to keep the
+      # previous behaviour (CF-Connecting-IP trusted whenever RENDER is set).
+      # - key: CF_ORIGIN_SECRET
+      #   generateValue: true
     domains:
       - api.trynaqua.com

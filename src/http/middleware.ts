@@ -9,7 +9,7 @@ import {
   HttpServerResponse,
 } from 'effect/http';
 import { HttpApiMiddleware } from 'effect/http-api';
-import { IS_RENDER, MAX_BODY_BYTES, REQUESTS_PER_MINUTE } from '../config.ts';
+import { CF_ORIGIN_SECRET, IS_RENDER, MAX_BODY_BYTES, REQUESTS_PER_MINUTE } from '../config.ts';
 import { Dataset } from '../data/dataset.ts';
 import { issueList } from '../data/schema.ts';
 import { PayloadTooLarge, RateLimited, ValidationError, errorBody } from './errors.ts';
@@ -142,10 +142,19 @@ export class RateLimit extends HttpApiMiddleware.Service<RateLimit>()('naqua/Rat
       const clock = yield* Clock.Clock;
       const hit = fixedWindow(yield* REQUESTS_PER_MINUTE, () => clock.currentTimeMillisUnsafe());
       const isRender = yield* IS_RENDER;
+      const originSecret = yield* CF_ORIGIN_SECRET;
+
+      // Trusting CF-Connecting-IP without origin proof lets a request straight to
+      // the origin forge it and bypass the limit. Make the residual risk visible.
+      if (isRender && originSecret === '') {
+        yield* Effect.logWarning(
+          'Rate limit trusts CF-Connecting-IP without origin proof. Lock the origin to Cloudflare or set CF_ORIGIN_SECRET.',
+        );
+      }
 
       return RateLimit.of(
         Effect.fn(function* (handler) {
-          const { limit, remaining, secondsUntilReset, exceeded } = hit(clientKey(yield* HttpServerRequest.HttpServerRequest, isRender));
+          const { limit, remaining, secondsUntilReset, exceeded } = hit(clientKey(yield* HttpServerRequest.HttpServerRequest, isRender, originSecret));
           yield* setResponseHeaders({
             'RateLimit-Limit': String(limit),
             'RateLimit-Remaining': String(remaining),
