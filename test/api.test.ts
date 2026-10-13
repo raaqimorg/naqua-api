@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { Option } from 'effect';
 import { HttpServerRequest } from 'effect/http';
 import { describe, test } from 'node:test';
-import { clientKey, fixedWindow } from '../src/http/rateLimit.ts';
+import { clientKey, slidingWindow } from '../src/http/rateLimit.ts';
 import { AMBIGUOUS_TICKER, app, calculate, dataset, disputedApp, get, json, makeTestApp } from './helpers.ts';
 
 describe('GET /v1/companies', () => {
@@ -377,13 +377,29 @@ describe('rate limiting', () => {
   });
 
   test('tracks a bounded number of clients, dropping the oldest', () => {
-    const hit = fixedWindow(1, () => 0, 2);
+    const hit = slidingWindow(1, () => 0, 2);
 
     assert.equal(hit('1.1.1.1').exceeded, false);
     assert.equal(hit('1.1.1.1').exceeded, true);
     hit('2.2.2.2');
     hit('3.3.3.3');
     assert.equal(hit('1.1.1.1').exceeded, false);
+  });
+
+  test('holds the limit across a window boundary', () => {
+    let now = 0;
+    const hit = slidingWindow(60, () => now);
+    hit('203.0.113.7');
+
+    // Fill the rest of the minute at its last instant, then try again just
+    // after a fixed window would have reset. Only the first hit has aged out.
+    let accepted = 0;
+    now = 59_999;
+    for (let i = 0; i < 60; i++) if (!hit('203.0.113.7').exceeded) accepted++;
+    now = 60_000;
+    for (let i = 0; i < 60; i++) if (!hit('203.0.113.7').exceeded) accepted++;
+
+    assert.equal(accepted, 60);
   });
 
   test('does not count the health check', async () => {

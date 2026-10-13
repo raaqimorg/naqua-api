@@ -13,7 +13,7 @@ import { IS_RENDER, MAX_BODY_BYTES, REQUESTS_PER_MINUTE } from '../config.ts';
 import { Dataset } from '../data/dataset.ts';
 import { issueList } from '../data/schema.ts';
 import { PayloadTooLarge, RateLimited, ValidationError, errorBody } from './errors.ts';
-import { clientKey, fixedWindow } from './rateLimit.ts';
+import { clientKey, slidingWindow } from './rateLimit.ts';
 import { MAX_ENTRIES_PER_REQUEST } from './schemas.ts';
 
 // The router's middleware wraps every request, matched or not. The API's
@@ -140,7 +140,7 @@ export class RateLimit extends HttpApiMiddleware.Service<RateLimit>()('naqua/Rat
     Effect.gen(function* () {
       // Read while the layer is built, which is how a test's clock reaches it.
       const clock = yield* Clock.Clock;
-      const hit = fixedWindow(yield* REQUESTS_PER_MINUTE, () => clock.currentTimeMillisUnsafe());
+      const hit = slidingWindow(yield* REQUESTS_PER_MINUTE, () => clock.currentTimeMillisUnsafe());
       const isRender = yield* IS_RENDER;
 
       return RateLimit.of(

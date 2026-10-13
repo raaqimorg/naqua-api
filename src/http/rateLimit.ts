@@ -22,35 +22,41 @@ export const clientKey = (request: HttpServerRequest.HttpServerRequest, isRender
   return Option.getOrElse(request.remoteAddress, () => 'unknown');
 };
 
-// A fixed one-minute window per client, held in memory. That is only sound
-// while the API runs as a single process; a restart resets every counter.
-export const fixedWindow = (limit: number, now: () => number, maxClients = MAX_CLIENTS) => {
-  // In the order the windows opened. They all last the same time, so the
-  // expired ones are always at the front.
-  const windows = new Map<string, { count: number; resetAt: number }>();
+// A sliding one-minute window per client, held in memory. Each client keeps
+// the times of its hits in the last minute, so the limit holds over every
+// rolling minute. A fixed window resets on a boundary instead, which lets a
+// client send its whole quota just before it and again just after. Only sound
+// while the API runs as a single process; a restart clears every client.
+export const slidingWindow = (limit: number, now: () => number, maxClients = MAX_CLIENTS) => {
+  // In the order the clients were last seen, so the ones whose hits have all
+  // aged out are always at the front.
+  const clients = new Map<string, number[]>();
 
   return (client: string): Hit => {
     const currentTime = now();
+    const windowStart = currentTime - WINDOW_MS;
 
-    for (const [key, window] of windows) {
-      if (window.resetAt > currentTime) break;
-      windows.delete(key);
+    for (const [key, hits] of clients) {
+      if (hits.at(-1)! > windowStart) break;
+      clients.delete(key);
     }
 
-    let window = windows.get(client);
-    if (!window || window.resetAt <= currentTime) {
-      windows.delete(client);
-      if (windows.size >= maxClients) windows.delete(windows.keys().next().value!);
-      window = { count: 0, resetAt: currentTime + WINDOW_MS };
-      windows.set(client, window);
-    }
-    window.count++;
+    const hits = clients.get(client) ?? [];
+    clients.delete(client);
+    while (hits.length > 0 && hits[0]! <= windowStart) hits.shift();
+
+    const exceeded = hits.length >= limit;
+    if (!exceeded) hits.push(currentTime);
+
+    if (clients.size >= maxClients) clients.delete(clients.keys().next().value!);
+    clients.set(client, hits);
 
     return {
       limit,
-      remaining: Math.max(0, limit - window.count),
-      secondsUntilReset: Math.max(1, Math.ceil((window.resetAt - currentTime) / 1000)),
-      exceeded: window.count > limit,
+      remaining: Math.max(0, limit - hits.length),
+      // When the oldest hit leaves the window, a request is allowed again.
+      secondsUntilReset: Math.max(1, Math.ceil((hits[0]! + WINDOW_MS - currentTime) / 1000)),
+      exceeded,
     };
   };
 };
