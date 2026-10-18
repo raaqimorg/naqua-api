@@ -386,6 +386,23 @@ describe('rate limiting', () => {
     assert.equal(hit('1.1.1.1').exceeded, false);
   });
 
+  test('a refused request does not save a client from aging out', () => {
+    let now = 0;
+    const hit = slidingWindow(1, () => now, 2);
+    hit('1.1.1.1');
+    now = 30_000;
+    hit('2.2.2.2');
+    now = 59_000;
+    assert.equal(hit('1.1.1.1').exceeded, true);
+
+    // The first client's hit has aged out, so it makes room for a new one,
+    // not the second client, whose hit still counts.
+    now = 70_000;
+    hit('3.3.3.3');
+    now = 71_000;
+    assert.equal(hit('2.2.2.2').exceeded, true);
+  });
+
   test('holds the limit across a window boundary', () => {
     let now = 0;
     const hit = slidingWindow(60, () => now);

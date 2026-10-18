@@ -28,7 +28,7 @@ export const clientKey = (request: HttpServerRequest.HttpServerRequest, isRender
 // client send its whole quota just before it and again just after. Only sound
 // while the API runs as a single process; a restart clears every client.
 export const slidingWindow = (limit: number, now: () => number, maxClients = MAX_CLIENTS) => {
-  // In the order the clients were last seen, so the ones whose hits have all
+  // In the order of each client's latest hit, so the ones whose hits have all
   // aged out are always at the front.
   const clients = new Map<string, number[]>();
 
@@ -42,14 +42,16 @@ export const slidingWindow = (limit: number, now: () => number, maxClients = MAX
     }
 
     const hits = clients.get(client) ?? [];
-    clients.delete(client);
     while (hits.length > 0 && hits[0]! <= windowStart) hits.shift();
 
+    // A refused request records no hit, so it leaves the client where it is.
     const exceeded = hits.length >= limit;
-    if (!exceeded) hits.push(currentTime);
-
-    if (clients.size >= maxClients) clients.delete(clients.keys().next().value!);
-    clients.set(client, hits);
+    if (!exceeded) {
+      hits.push(currentTime);
+      clients.delete(client);
+      if (clients.size >= maxClients) clients.delete(clients.keys().next().value!);
+      clients.set(client, hits);
+    }
 
     return {
       limit,
