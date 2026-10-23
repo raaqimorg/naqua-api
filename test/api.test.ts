@@ -28,7 +28,7 @@ describe('GET /v1/companies', () => {
       name: 'المتقدمة',
       aliases: [],
       overallStatus: 'varies',
-      availableYears: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      availableYears: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
     });
   });
 });
@@ -53,8 +53,8 @@ describe('GET /v1/companies/:ticker', () => {
 
   test('carries former names as aliases', async () => {
     const body = await json(await get('/v1/companies/4240'));
-    assert.equal(body.name, 'سينومي ريتيل');
-    assert.deepEqual(body.aliases, ['فواز الحكير']);
+    assert.equal(body.name, 'إيه إف جي ريتيل');
+    assert.deepEqual(body.aliases, ['سينومي ريتيل', 'فواز الحكير']);
   });
 
   test('calls Aramco public-sector', async () => {
@@ -99,6 +99,18 @@ describe('GET /v1/companies/:ticker/rates/:year', () => {
       ratePerShare: 0.0203,
       status: 'pure',
     });
+  });
+
+  // The Almaqased 2026 list (FY2025 statements), and a 2024 cell corrected
+  // against the publisher's FY2024 list.
+  test('serves the latest published list', async () => {
+    const rate = async (path: string) => {
+      const { ratePerShare, status } = await json(await get(path));
+      return { ratePerShare, status };
+    };
+    assert.deepEqual(await rate('/v1/companies/9589/rates/2025'), { ratePerShare: 2.73, status: 'mixed' });
+    assert.deepEqual(await rate('/v1/companies/2222/rates/2025'), { ratePerShare: 0.05, status: 'public-sector' });
+    assert.deepEqual(await rate('/v1/companies/2030/rates/2024'), { ratePerShare: 0.09, status: 'pure' });
   });
 
   test('404s a year outside the data', async () => {
@@ -153,7 +165,8 @@ describe('POST /v1/purification/calculate', () => {
     const aramcoYears = body.entries[1].years.map((year: { year: number; daysOwned: number }) => [year.year, year.daysOwned]);
     assert.deepEqual(aramcoYears, [
       [2023, 365],
-      [2024, 365],
+      [2024, 366],
+      [2025, 364],
     ]);
     const entryTotal = body.entries.reduce((sum: number, entry: { purificationAmount: number }) => sum + entry.purificationAmount, 0);
     assert.equal(body.totalPurificationAmount, Number(entryTotal.toFixed(10)));
@@ -165,13 +178,13 @@ describe('POST /v1/purification/calculate', () => {
     ['a sale date without a purchase date', { ticker: 2330, shares: 1, saleDate: '2021-03-01' }, 'purchaseDate'],
     ['an impossible date', { ticker: 2330, shares: 1, purchaseDate: '2021-02-30', saleDate: '2021-03-01' }, 'purchaseDate'],
     ['a date before the data', { ticker: 2330, shares: 1, purchaseDate: '2014-12-31', saleDate: '2015-03-01' }, 'purchaseDate'],
-    ['a sale after the data', { ticker: 2330, shares: 1, purchaseDate: '2024-01-01', saleDate: '2025-01-01' }, 'saleDate'],
+    ['a sale after the data', { ticker: 2330, shares: 1, purchaseDate: '2025-01-01', saleDate: '2026-01-01' }, 'saleDate'],
     ['a sale on the purchase day', { ticker: 2330, shares: 1, purchaseDate: '2021-05-01', saleDate: '2021-05-01' }, 'saleDate'],
     ['a missing sale date', { ticker: 2330, shares: 1, purchaseDate: '2021-05-01' }, 'saleDate'],
     ['a sale date on a still-owned holding', { ticker: 2330, shares: 1, purchaseDate: '2021-05-01', saleDate: '2022-01-01', stillOwned: true }, 'saleDate'],
-    ['still owned from the last day of the data', { ticker: 2330, shares: 1, purchaseDate: '2024-12-31', stillOwned: true }, 'purchaseDate'],
+    ['still owned from the last day of the data', { ticker: 2330, shares: 1, purchaseDate: '2025-12-31', stillOwned: true }, 'purchaseDate'],
     ['a year outside the data', { ticker: 2330, shares: 1, year: 2014, daysOwned: 10 }, 'year'],
-    ['days past the data', { ticker: 2330, shares: 1, year: 2024, daysOwned: 366 }, 'daysOwned'],
+    ['days past the data', { ticker: 2330, shares: 1, year: 2025, daysOwned: 366 }, 'daysOwned'],
     ['days without a year', { ticker: 2330, shares: 1, daysOwned: 10 }, 'year'],
     ['fractional days', { ticker: 2330, shares: 1, year: 2024, daysOwned: 1.5 }, 'daysOwned'],
     ['zero shares', { ticker: 2330, shares: 0, year: 2024, daysOwned: 10 }, 'shares'],
@@ -192,9 +205,9 @@ describe('POST /v1/purification/calculate', () => {
 
   test('explains its own rules in its own words', async () => {
     const issue = async (entry: Record<string, unknown>) => (await json(await calculate({ entries: [entry] }))).error.details[0];
-    assert.deepEqual(await issue({ ticker: 2330, shares: 1, year: 2024, daysOwned: 366 }), {
+    assert.deepEqual(await issue({ ticker: 2330, shares: 1, year: 2025, daysOwned: 366 }), {
       path: 'entries.0.daysOwned',
-      message: 'Starting in 2024, `daysOwned` cannot exceed 365 (data ends in 2024).',
+      message: 'Starting in 2025, `daysOwned` cannot exceed 365 (data ends in 2025).',
     });
     assert.deepEqual(await issue({ ticker: 2330, shares: 1, purchaseDate: '2021-05-01', saleDate: '2021-05-01' }), {
       path: 'entries.0.saleDate',
@@ -288,8 +301,8 @@ describe('GET /v1/meta', () => {
     assert.equal(body.dataVersion, dataset.version);
     assert.deepEqual(body.coverage, {
       start: '2015-01-01',
-      end: '2024-12-31',
-      years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      end: '2025-12-31',
+      years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
     });
     assert.equal(body.companyCount, dataset.companies.length);
     assert.deepEqual(body.unresolvedTickers, []);

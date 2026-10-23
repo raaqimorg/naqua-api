@@ -15,7 +15,7 @@
 <p align="center">
   <a href="https://trynaqua.com"><img alt="Live site" src="https://img.shields.io/website?url=https%3A%2F%2Ftrynaqua.com&label=trynaqua.com"></a>
   <a href="https://api.trynaqua.com/docs"><img alt="API docs" src="https://img.shields.io/badge/api-docs-green.svg"></a>
-  <a href="data/companies.json"><img alt="Data: 2015 to 2024, 219 companies" src="https://img.shields.io/badge/data-2015--2024%2C%20219%20companies-lightgrey.svg"></a>
+  <a href="data/companies.json"><img alt="Data: 2015 to 2025, 387 companies" src="https://img.shields.io/badge/data-2015--2025%2C%20387%20companies-lightgrey.svg"></a>
   <a href="LICENSE"><img alt="Code: MIT" src="https://img.shields.io/badge/code-MIT-blue.svg"></a>
   <a href="#license"><img alt="Rates: © Al-Maqased Center" src="https://img.shields.io/badge/rates-%C2%A9%20Al--Maqased-blue.svg"></a>
 </p>
@@ -24,11 +24,11 @@
 
 `naqua-api` is a public API for Sharia screening and Saudi (Tadawul) stock purification, and one of the products of [Naqua (نقوة)](https://trynaqua.com), a startup. It serves the published Sharia classification and purification rate for each company and year, and it calculates how much to purify for a set of holdings. It runs the same calculation as the calculator on [trynaqua.com](https://trynaqua.com), and a test sweep holds the two to the same numbers.
 
-| Companies | Years | Company-years | With a rate | Pure | Mixed | Non-pure | Public sector |
-| --------: | ----: | ------------: | ----------: | ---: | ----: | -------: | ------------: |
-|       219 |    10 |         1,389 |       1,386 |  845 |   461 |       76 |             6 |
+| Companies | Years | Company-years | With a rate |  Pure | Mixed | Non-pure | Public sector |
+| --------: | ----: | ------------: | ----------: | ----: | ----: | -------: | ------------: |
+|       387 |    11 |         1,771 |       1,768 | 1,132 |   540 |       91 |             7 |
 
-<sub>From data version <code>3f812625bb70</code>, which covers 2015 to 2024. Each status counts company-years, because a company can change status from one year to the next. One year has a rate but no status.</sub>
+<sub>From data version <code>489644bb005f</code>, which covers 2015 to 2025. Each status counts company-years, because a company can change status from one year to the next. One year has a rate but no status.</sub>
 
 <p align="center">
   <img src=".github/readme_screenshot_site.webp" alt="The trynaqua.com home page: the name نَقوة over لتطهير الأسهم السعودية, with a button to the calculator" width="49%">
@@ -158,7 +158,7 @@ An oversized request that declares its content length gets 413. On the Node serv
 {
   "schemaVersion": 1,
   "unit": "SAR to purify per share held for a full year",
-  "coverage": { "start": "2015-01-01", "end": "2024-12-31" },
+  "coverage": { "start": "2015-01-01", "end": "2025-12-31" },
   "companies": [
     {
       "ticker": 2330,
@@ -179,13 +179,13 @@ An oversized request that declares its content length gets 413. On the Node serv
 - Tickers are unique. When the source gives one ticker to two different companies, the ticker goes in `unresolved` with every candidate kept. The API answers `409 AMBIGUOUS_TICKER` for it until someone decides which one is right.
 - The file has one canonical layout: sorted by ticker, with one year per line. A rate change then shows up as a one-line diff.
 
-The dataset began as the purification data behind trynaqua.com. This repo keeps a validated snapshot of it, so the API and its tests need neither the private website repository nor a network connection.
+The dataset began as the purification data behind trynaqua.com. This repo keeps a validated snapshot of it, so the API and its tests need neither the private website repository nor a network connection. The 2025 rates come from the Al-Maqased 2026 report on the companies' 2025 financial statements.
 
 <details>
 <summary><b>Editing the data</b></summary>
 <br>
 
-1. Edit `data/companies.json`. Add a yearly entry only where a published rate or status is available. To extend the data past 2024, also move `coverage.end`.
+1. Edit `data/companies.json`. Add a yearly entry only where a published rate or status is available. To extend the data past 2025, also move `coverage.end`.
 2. Run `pnpm data:format`. It validates the file and restores the canonical layout.
 3. Run `pnpm test`. If a change alters a number that the website still computes differently, the parity test fails. That is intended; see [Parity with the website](#parity-with-the-website).
 
