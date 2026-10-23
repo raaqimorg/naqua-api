@@ -224,7 +224,7 @@ export const MetaSchema = Schema.Struct({
   dataVersion: Schema.String.annotate({ description: 'Changes whenever the underlying data does.' }),
   coverage: Schema.Struct({
     start: Schema.String.annotate({ examples: ['2015-01-01'] }),
-    end: Schema.String.annotate({ examples: ['2024-12-31'] }),
+    end: Schema.String.annotate({ examples: ['2025-12-31'] }),
     years: Schema.Array(Schema.Int),
   }),
   unit: Schema.String,
