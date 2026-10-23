@@ -6,10 +6,13 @@ import { createServer } from 'node:http';
 import { AppLayer } from './app.ts';
 import { PORT } from './config.ts';
 import { Dataset } from './data/dataset.ts';
+import { LoggingLayer } from './logging.ts';
 
-const ServerLayer = HttpRouter.serve(AppLayer).pipe(
+// The router middleware logs each request itself, so Effect's own request log is off.
+const ServerLayer = HttpRouter.serve(AppLayer, { disableLogger: true }).pipe(
   Layer.provide(NodeHttpServer.layerConfig(createServer, { port: PORT })),
   Layer.provide(Dataset.layer),
+  Layer.provide(LoggingLayer),
 );
 
 NodeRuntime.runMain(Layer.launch(ServerLayer));

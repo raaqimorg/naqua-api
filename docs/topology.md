@@ -35,6 +35,7 @@ flowchart LR
 - **One instance.** The rate limiter holds its windows in memory, so it is correct only while one process serves every request, and a restart resets it.
 - **Client addresses.** Render sets `RENDER=true`, and then the limiter keys on `CF-Connecting-IP`, which Render's public ingress overwrites. Anywhere else, or when that header is missing or invalid, it keys on the socket address. It never trusts `X-Forwarded-For`.
 - **Health check.** Render polls `/health`, which sits outside the rate limit.
+- **Logs.** Each request writes one JSON line to stdout, and Render keeps those lines for a limited time. Passing health checks are left out. With the `OTEL_*` variables set, the lines are also exported over OTLP, as the README describes.
 - **Cold starts.** On the free plan, the service sleeps after about 15 idle minutes, and the next request waits for it to start.
 - **The docs page.** `/docs` is served by the API, but the browser loads Scalar's script from `cdn.jsdelivr.net`, at the version pinned in `SCALAR_VERSION` (`src/app.ts`).
 
@@ -42,7 +43,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    request["Request"] --> router["Router middleware<br/>CORS, security headers,<br/>unknown routes, defects"]
+    request["Request"] --> router["Router middleware<br/>CORS, security headers,<br/>unknown routes, defects, request log"]
     router --> apiwide["API middleware, /v1 only<br/>rate limit, data version"]
     apiwide --> endpoint["Endpoint middleware<br/>validation, entry limit, JSON body"]
     endpoint --> handler["Handler<br/>companies, purification, meta"]
@@ -76,12 +77,13 @@ src/
   server.ts        starts the HTTP server once the dataset has loaded
   app.ts           assembles the API, /docs, / and the router middleware
   config.ts        environment variables and fixed limits
+  logging.ts       where logs go: stdout, and OTLP export when configured
   http/            endpoints, schemas, errors, middleware, handlers, rate limit
   domain/          purification arithmetic and UTC day numbers, plain functions
   data/            the dataset's schema, loading, and canonical layout
 data/              companies.json, the hand-edited rate snapshot
 scripts/           format-dataset.ts, behind pnpm data:format
-test/              API, config, dataset, dates, parity, and contract tests
+test/              API, config, dataset, dates, logging, parity, and contract tests
   fixtures/        contract.json, legacy-site.json, legacy-differences.json
 docs/              this file
 .github/           CI, issue and pull request templates, community files
