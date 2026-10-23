@@ -80,6 +80,16 @@ The API is then at http://localhost:3000, which redirects to its interactive doc
 
 For interactive docs that send requests to your local server, start it with `PUBLIC_URL=http://localhost:3000`.
 
+**Logs.** Each request writes one line with its method, path, status, duration, user agent, calling site (`Origin`), and the error code if it failed. The field names follow OpenTelemetry's HTTP conventions. A line never holds the client's IP address, the query string, or the request body. On Render the lines are JSON, and Render keeps them for a limited time. To also send them to an OpenTelemetry backend such as OpenObserve, set the standard variables:
+
+```bash
+OTEL_LOGS_EXPORTER=otlp
+OTEL_EXPORTER_OTLP_ENDPOINT=https://openobserve.example.com/api/default
+OTEL_EXPORTER_OTLP_HEADERS=Authorization=Basic%20<base64 of user:password>
+```
+
+`OTEL_EXPORTER_OTLP_PROTOCOL` is `http/protobuf` by default, or `http/json`. Logs are sent in the background in batches, so a log backend that is down loses logs, never requests.
+
 ## API
 
 `https://api.trynaqua.com/v1` serves JSON for companies, their yearly rates, and purification amounts. To explore it, open the [interactive docs](https://api.trynaqua.com/docs) or the [OpenAPI 3.1 document](https://api.trynaqua.com/openapi.json).
@@ -199,7 +209,7 @@ A request reaches the Node server on Render. The router middleware applies what 
 
 ```mermaid
 flowchart LR
-    client["Client"] --> router["Router middleware<br/>CORS, security headers,<br/>unknown routes, defects"]
+    client["Client"] --> router["Router middleware<br/>CORS, security headers,<br/>unknown routes, defects, request log"]
     router --> mw["Endpoint middleware<br/>rate limit, data version,<br/>validation, entry limit, JSON body"]
     mw --> handlers["Handlers<br/>companies, purification, meta"]
     handlers --> domain["Purification arithmetic<br/>UTC day numbers"]
@@ -210,6 +220,7 @@ flowchart LR
 | -------------------------------------------------------- | ------------------------------------------------------------------------- |
 | [`src/server.ts`](src/server.ts)                         | Starts the HTTP server once the dataset has loaded                        |
 | [`src/app.ts`](src/app.ts)                               | Assembles the API, the docs page at `/docs`, and the router middleware    |
+| [`src/logging.ts`](src/logging.ts)                       | Where logs go: stdout, and OpenTelemetry export when configured           |
 | [`src/http/`](src/http)                                  | Endpoint definitions, schemas, the error envelope, middleware, handlers   |
 | [`src/domain/`](src/domain)                              | The purification arithmetic, and dates as UTC day numbers                 |
 | [`src/data/`](src/data)                                  | The dataset's schema, its loading, and its canonical layout               |

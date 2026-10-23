@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { Clock, ConfigProvider, Effect, Layer, References } from 'effect';
+import { Clock, ConfigProvider, Effect, Layer, Logger, References, flow } from 'effect';
 import { HttpRouter, HttpServer } from 'effect/http';
 import { AppLayer } from '../src/app.ts';
 import { DATASET_PATH, Dataset, loadDataset, parseDataset, type LoadedDataset } from '../src/data/dataset.ts';
@@ -19,17 +19,20 @@ const clockFrom = (now: () => number): Clock.Clock => {
   };
 };
 
-// The whole app in memory, with its own dataset, rate limit and clock.
+// The whole app in memory, with its own dataset, rate limit and clock. Logs
+// are silenced unless a `logger` is given to capture them.
 export const makeTestApp = ({
   dataset,
   requestsPerMinute = 1_000_000,
   isRender = false,
   now,
+  logger,
 }: {
   dataset: LoadedDataset;
   requestsPerMinute?: number;
   isRender?: boolean;
   now?: () => number;
+  logger?: Logger.Logger<unknown, unknown>;
 }) => {
   const app = AppLayer.pipe(
     Layer.provide([
@@ -41,7 +44,9 @@ export const makeTestApp = ({
   );
   const { handler } = HttpRouter.toWebHandler(app, {
     disableLogger: true,
-    middleware: Effect.provideService(References.MinimumLogLevel, 'None'),
+    middleware: logger
+      ? flow(Effect.provideService(References.MinimumLogLevel, 'Info'), Effect.provideService(Logger.CurrentLoggers, new Set([logger])))
+      : Effect.provideService(References.MinimumLogLevel, 'None'),
   });
   return { request: (path: string, init?: RequestInit) => handler(new Request(new URL(path, 'http://localhost'), init)) };
 };

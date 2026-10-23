@@ -36,6 +36,11 @@ pnpm data:format    # validate data/companies.json and restore its canonical lay
   set `SCALAR_VERSION` in `src/app.ts` to the Scalar version it bundles. Import
   `@effect/platform-node` by module (`@effect/platform-node/NodeRuntime`): its
   index also loads a Redis client.
+- **Logs hold no personal data.** The request log in `RouterMiddleware` records
+  the method, path, status, duration, user agent, `Origin` and error code. Never
+  add the client's address, the query string, the request body, or other headers,
+  and clip any text a caller sends. `test/logging.test.ts` checks this. Export
+  is configured only through the standard `OTEL_*` variables (`src/logging.ts`).
 - **Dates are UTC day numbers** (`src/domain/dates.ts`), never local-time
   `Date` objects. That keeps day counts independent of the server's time zone.
 - **The arithmetic mirrors the website.** `purificationAmount` and `sumAmounts`

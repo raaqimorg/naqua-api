@@ -43,20 +43,67 @@ const notFound = ({ method, url }: HttpServerRequest.HttpServerRequest) =>
 
 const internalError = json(500, errorBody('INTERNAL_ERROR', 'حدث خطأ غير متوقع.', 'An unexpected error occurred.'));
 
+// User-supplied text is cut to this length before it reaches a log line.
+const MAX_LOGGED_LENGTH = 256;
+const clip = (value: string): string => (value.length > MAX_LOGGED_LENGTH ? `${value.slice(0, MAX_LOGGED_LENGTH)}…` : value);
+
+// The `code` of the error envelope, so failures can be counted by cause.
+const errorCode = (response: HttpServerResponse.HttpServerResponse): string | undefined => {
+  if (response.status < 400 || response.body._tag !== 'Uint8Array') return undefined;
+  try {
+    const code: unknown = JSON.parse(new TextDecoder().decode(response.body.body))?.error?.code;
+    return typeof code === 'string' ? code : undefined;
+  } catch {
+    return undefined;
+  }
+};
+
+// One line per request, named after OpenTelemetry's HTTP conventions. It never
+// records the client's address or the request body, which holds a person's
+// holdings. Render's health checks are left out unless one fails.
+const logRequest = (request: HttpServerRequest.HttpServerRequest, response: HttpServerResponse.HttpServerResponse, durationMs: number) => {
+  const path = request.url.replace(/[?#].*$/s, '');
+  if (path === '/health' && response.status < 400) return Effect.void;
+
+  const userAgent = request.headers['user-agent'];
+  const origin = request.headers['origin'];
+  const code = errorCode(response);
+  const fields: Record<string, string | number> = {
+    'http.request.method': request.method,
+    'url.path': clip(path),
+    'http.response.status_code': response.status,
+    duration_ms: Math.round(durationMs * 10) / 10,
+    ...(userAgent === undefined ? {} : { 'user_agent.original': clip(userAgent) }),
+    ...(origin === undefined ? {} : { 'http.request.header.origin': clip(origin) }),
+    ...(code === undefined ? {} : { 'error.type': code }),
+  };
+  const message = `${request.method} ${clip(path)} ${response.status}`;
+  const log = response.status >= 500 ? Effect.logError(message) : Effect.logInfo(message);
+  return log.pipe(Effect.annotateLogs(fields));
+};
+
 // CORS answers a preflight itself. Any other response gets the security
 // headers, and what the router answers on its own, an unknown route or a
-// defect, gets the error envelope.
+// defect, gets the error envelope. Every response is then logged.
 export const RouterMiddleware = HttpRouter.middleware<{ handles: HttpServerError.HttpServerError }>()(
   (app) =>
-    cors(
-      app.pipe(
-        Effect.catchIf(HttpServerError.isHttpServerError, (error) =>
-          error.reason._tag === 'RouteNotFound' ? Effect.succeed(notFound(error.request)) : Effect.die(error),
+    Effect.gen(function* () {
+      const request = yield* HttpServerRequest.HttpServerRequest;
+      const clock = yield* Clock.Clock;
+      const start = clock.currentTimeNanosUnsafe();
+      const response = yield* cors(
+        app.pipe(
+          Effect.catchIf(HttpServerError.isHttpServerError, (error) =>
+            error.reason._tag === 'RouteNotFound' ? Effect.succeed(notFound(error.request)) : Effect.die(error),
+          ),
+          Effect.catchDefect((defect) => Effect.as(Effect.logError('Unexpected failure', defect), internalError)),
+          Effect.map(HttpServerResponse.setHeaders(SECURITY_HEADERS)),
         ),
-        Effect.catchDefect((defect) => Effect.as(Effect.logError('Unexpected failure', defect), internalError)),
-        Effect.map(HttpServerResponse.setHeaders(SECURITY_HEADERS)),
-      ),
-    ),
+      );
+      const durationMs = Number(clock.currentTimeNanosUnsafe() - start) / 1e6;
+      yield* logRequest(request, response, durationMs);
+      return response;
+    }),
   { global: true },
 );
 

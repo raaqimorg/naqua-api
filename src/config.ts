@@ -11,3 +11,10 @@ export const REQUESTS_PER_MINUTE = Config.schema(
   Schema.Int.check(Schema.isGreaterThan(0)),
   'REQUESTS_PER_MINUTE',
 ).pipe(Config.withDefault(60));
+
+// The rest of the OTLP settings are the standard OTEL_* variables, which
+// Effect reads itself (see src/logging.ts).
+export const OTLP_PROTOCOL = Config.schema(
+  Schema.Literals(['http/protobuf', 'http/json']),
+  'OTEL_EXPORTER_OTLP_PROTOCOL',
+).pipe(Config.withDefault('http/protobuf'));
