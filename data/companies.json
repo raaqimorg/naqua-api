@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "unit": "SAR to purify per share held for a full year",
-  "coverage": { "start": "2015-01-01", "end": "2024-12-31" },
+  "coverage": { "start": "2015-01-01", "end": "2025-12-31" },
   "companies": [
     {
       "ticker": 1111,
@@ -11,7 +11,8 @@
         "2021": { "rate": 0.3275, "status": "mixed" },
         "2022": { "rate": 0.639, "status": "non-pure" },
         "2023": { "rate": 0.476, "status": "pure" },
-        "2024": { "rate": 0.4, "status": "mixed" }
+        "2024": { "rate": 0.4, "status": "mixed" },
+        "2025": { "rate": 0.07, "status": "pure" }
       }
     },
     {
@@ -20,7 +21,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0063, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -29,7 +31,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0153, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -46,7 +49,8 @@
         "2021": { "rate": 0.0039, "status": "mixed" },
         "2022": { "rate": 0.011, "status": "mixed" },
         "2023": { "rate": 0.0064, "status": "non-pure" },
-        "2024": { "rate": 0.01, "status": "non-pure" }
+        "2024": { "rate": 0.01, "status": "non-pure" },
+        "2025": { "rate": 0.01, "status": "non-pure" }
       }
     },
     {
@@ -63,7 +67,8 @@
         "2021": { "rate": 0.0527, "status": "pure" },
         "2022": { "rate": 0.043, "status": "pure" },
         "2023": { "rate": 0.0167, "status": "pure" },
-        "2024": { "rate": 0.46, "status": "mixed" }
+        "2024": { "rate": 0.46, "status": "mixed" },
+        "2025": { "rate": 0.19, "status": "mixed" }
       }
     },
     {
@@ -80,7 +85,8 @@
         "2021": { "rate": 0.0259, "status": "mixed" },
         "2022": { "rate": 0.045, "status": "mixed" },
         "2023": { "rate": 0.0733, "status": "mixed" },
-        "2024": { "rate": 0.4, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.05, "status": "mixed" }
       }
     },
     {
@@ -97,7 +103,8 @@
         "2021": { "rate": 0.116, "status": "mixed" },
         "2022": { "rate": 0.189, "status": "mixed" },
         "2023": { "rate": 0.2772, "status": "mixed" },
-        "2024": { "rate": 0.26, "status": "mixed" }
+        "2024": { "rate": 0.26, "status": "mixed" },
+        "2025": { "rate": 0.21, "status": "mixed" }
       }
     },
     {
@@ -114,7 +121,8 @@
         "2021": { "rate": 0.0056, "status": "mixed" },
         "2022": { "rate": 0.033, "status": "mixed" },
         "2023": { "rate": 0.0117, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -131,7 +139,8 @@
         "2021": { "rate": 0.0315, "status": "mixed" },
         "2022": { "rate": 0.035, "status": "mixed" },
         "2023": { "rate": 0.0101, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "non-pure" }
+        "2024": { "rate": 0.01, "status": "non-pure" },
+        "2025": { "rate": 0, "status": "non-pure" }
       }
     },
     {
@@ -148,7 +157,8 @@
         "2021": { "rate": 0.0249, "status": "pure" },
         "2022": { "rate": 0.028, "status": "pure" },
         "2023": { "rate": 0.0316, "status": "pure" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -165,7 +175,8 @@
         "2021": { "rate": 0.0364, "status": "pure" },
         "2022": { "rate": 0.085, "status": "pure" },
         "2023": { "rate": 0.0271, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -182,7 +193,8 @@
         "2021": { "rate": 0.0082, "status": "pure" },
         "2022": { "rate": 0.013, "status": "pure" },
         "2023": { "rate": 0.0106, "status": "pure" },
-        "2024": { "rate": 0.19, "status": "pure" }
+        "2024": { "rate": 0.19, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "mixed" }
       }
     },
     {
@@ -199,7 +211,8 @@
         "2021": { "rate": 0.0154, "status": "pure" },
         "2022": { "rate": 0.0043, "status": "pure" },
         "2023": { "rate": 0.0013, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "mixed" }
       }
     },
     {
@@ -215,7 +228,8 @@
         "2021": { "rate": 0.0383, "status": "mixed" },
         "2022": { "rate": 0.027, "status": "non-pure" },
         "2023": { "rate": 0.0092, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "non-pure" }
+        "2024": { "rate": 0.04, "status": "non-pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -232,7 +246,8 @@
         "2021": { "rate": 0.0246, "status": "pure" },
         "2022": { "rate": 0.037, "status": "mixed" },
         "2023": { "rate": 0.1296, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "mixed" }
+        "2024": { "rate": 0.09, "status": "mixed" },
+        "2025": { "rate": 0.13, "status": "mixed" }
       }
     },
     {
@@ -243,7 +258,8 @@
         "2021": { "rate": 0.0201, "status": "mixed" },
         "2022": { "rate": 0.057, "status": "mixed" },
         "2023": { "rate": 0.0728, "status": "mixed" },
-        "2024": { "rate": 0.14, "status": "mixed" }
+        "2024": { "rate": 0.14, "status": "pure" },
+        "2025": { "rate": 0.76, "status": "mixed" }
       }
     },
     {
@@ -254,7 +270,8 @@
         "2021": { "rate": 0.0133, "status": "pure" },
         "2022": { "rate": 0.078, "status": "mixed" },
         "2023": { "rate": 0.0139, "status": "mixed" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -262,7 +279,24 @@
       "name": "يو سي آي سي",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.02, "status": "mixed" }
+        "2024": { "rate": 0.02, "status": "mixed" },
+        "2025": { "rate": 0.05, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 1324,
+      "name": "صالح الراشد",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.07, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 1325,
+      "name": "حديد وطني",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -289,7 +323,8 @@
         "2021": { "rate": 0.0145, "status": "pure" },
         "2022": { "rate": 0.039, "status": "pure" },
         "2023": { "rate": 0.0537, "status": "pure" },
-        "2024": { "rate": 0.12, "status": "pure" }
+        "2024": { "rate": 0.12, "status": "pure" },
+        "2025": { "rate": 0.12, "status": "mixed" }
       }
     },
     {
@@ -305,7 +340,8 @@
         "2020": { "rate": 0.0082, "status": "pure" },
         "2021": { "rate": 0.0299, "status": "pure" },
         "2022": { "rate": 0.067, "status": "pure" },
-        "2023": { "rate": 0.0029, "status": "pure" }
+        "2023": { "rate": 0.0029, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -319,7 +355,16 @@
         "2021": { "rate": 0.0245, "status": "pure" },
         "2022": { "rate": 0.086, "status": "mixed" },
         "2023": { "rate": 0.0695, "status": "mixed" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.06, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 1831,
+      "name": "مهارة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -331,7 +376,8 @@
         "2021": { "rate": 0.0988, "status": "pure" },
         "2022": { "rate": 0.004, "status": "pure" },
         "2023": { "rate": 0.0088, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -341,7 +387,8 @@
       "years": {
         "2022": { "rate": 0.074, "status": "pure" },
         "2023": { "rate": 0.1192, "status": "pure" },
-        "2024": { "rate": 0.13, "status": "pure" }
+        "2024": { "rate": 0.14, "status": "pure" },
+        "2025": { "rate": 0.06, "status": "pure" }
       }
     },
     {
@@ -350,7 +397,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.018, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -358,7 +406,8 @@
       "name": "تمكين",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -375,7 +424,8 @@
         "2021": { "rate": 0.0052, "status": "pure" },
         "2022": { "rate": 0.01, "status": "pure" },
         "2023": { "rate": 0.0089, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -392,7 +442,8 @@
         "2021": { "rate": 0.1234, "status": "mixed" },
         "2022": { "rate": 0.253, "status": "pure" },
         "2023": { "rate": 0.8947, "status": "mixed" },
-        "2024": { "rate": 0.8, "status": "pure" }
+        "2024": { "rate": 0.8, "status": "mixed" },
+        "2025": { "rate": 0.39, "status": "mixed" }
       }
     },
     {
@@ -409,7 +460,8 @@
         "2021": { "rate": 0.0169, "status": "pure" },
         "2022": { "rate": 0.023, "status": "pure" },
         "2023": { "rate": 0.0342, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -426,7 +478,8 @@
         "2021": { "rate": 0.1594, "status": "pure" },
         "2022": { "rate": 0.143, "status": "pure" },
         "2023": { "rate": 0.1188, "status": "pure" },
-        "2024": { "rate": 0.9, "status": "pure" }
+        "2024": { "rate": 0.09, "status": "pure" },
+        "2025": { "rate": 0.06, "status": "pure" }
       }
     },
     {
@@ -443,7 +496,8 @@
         "2021": { "rate": 0.0142, "status": "pure" },
         "2022": { "rate": 0.018, "status": "pure" },
         "2023": { "rate": 0.0164, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -460,7 +514,8 @@
         "2021": { "rate": 0.0585, "status": "pure" },
         "2022": { "rate": 0.221, "status": "pure" },
         "2023": { "rate": 0.3506, "status": "mixed" },
-        "2024": { "rate": 0.57, "status": "mixed" }
+        "2024": { "rate": 0.57, "status": "mixed" },
+        "2025": { "rate": 0.54, "status": "pure" }
       }
     },
     {
@@ -477,7 +532,8 @@
         "2021": { "rate": 0.085, "status": "mixed" },
         "2022": { "rate": 0.105, "status": "mixed" },
         "2023": { "rate": 0.2231, "status": "mixed" },
-        "2024": { "rate": 0.26, "status": "mixed" }
+        "2024": { "rate": 0.26, "status": "mixed" },
+        "2025": { "rate": 0.2, "status": "mixed" }
       }
     },
     {
@@ -494,13 +550,14 @@
         "2021": { "rate": 0.0391, "status": "mixed" },
         "2022": { "rate": 0.053, "status": "mixed" },
         "2023": { "rate": 0.0316, "status": "mixed" },
-        "2024": { "rate": 0.02, "status": "mixed" }
+        "2024": { "rate": 0.02, "status": "mixed" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
       "ticker": 2080,
-      "name": "الغاز",
-      "aliases": ["الغاز الأهلية"],
+      "name": "الغاز القابضة",
+      "aliases": ["الغاز","الغاز الأهلية"],
       "years": {
         "2015": { "rate": 0.0144, "status": "pure" },
         "2016": { "rate": 0.0159, "status": "pure" },
@@ -511,7 +568,8 @@
         "2021": { "rate": 0.0514, "status": "mixed" },
         "2022": { "rate": 0.075, "status": "pure" },
         "2023": { "rate": 0.0689, "status": "pure" },
-        "2024": { "rate": 0.05, "status": "pure" }
+        "2024": { "rate": 0.05, "status": "pure" },
+        "2025": { "rate": 0.06, "status": "pure" }
       }
     },
     {
@@ -523,7 +581,8 @@
         "2021": { "rate": 0.0168, "status": "pure" },
         "2022": { "rate": 0.07, "status": "pure" },
         "2023": { "rate": 0.0882, "status": "pure" },
-        "2024": { "rate": 0.18, "status": "pure" }
+        "2024": { "rate": 0.18, "status": "pure" },
+        "2025": { "rate": 0.38, "status": "pure" }
       }
     },
     {
@@ -534,7 +593,8 @@
         "2021": { "rate": 0.2095, "status": "mixed" },
         "2022": { "rate": 0.341, "status": "mixed" },
         "2023": { "rate": 0.3283, "status": "mixed" },
-        "2024": { "rate": 0.88, "status": "non-pure" }
+        "2024": { "rate": 0.88, "status": "non-pure" },
+        "2025": { "rate": 1.07, "status": "non-pure" }
       }
     },
     {
@@ -544,7 +604,8 @@
       "years": {
         "2022": { "rate": 0.291, "status": "mixed" },
         "2023": { "rate": 0.4117, "status": "mixed" },
-        "2024": { "rate": 0.33, "status": "pure" }
+        "2024": { "rate": 0.33, "status": "pure" },
+        "2025": { "rate": 0.39, "status": "mixed" }
       }
     },
     {
@@ -553,7 +614,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0445, "status": "pure" },
-        "2024": { "rate": 0.05, "status": "mixed" }
+        "2024": { "rate": 0.05, "status": "mixed" },
+        "2025": { "rate": 0.09, "status": "mixed" }
       }
     },
     {
@@ -570,7 +632,8 @@
         "2021": { "rate": 0.0338, "status": "pure" },
         "2022": { "rate": 0.032, "status": "pure" },
         "2023": { "rate": 0.0142, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -587,7 +650,8 @@
         "2021": { "rate": 0.0127, "status": "pure" },
         "2022": { "rate": 0.109, "status": "pure" },
         "2023": { "rate": 0.01, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -602,7 +666,8 @@
         "2020": { "rate": 0.0237, "status": "mixed" },
         "2021": { "rate": 0.025, "status": "mixed" },
         "2023": { "rate": 0.16, "status": "pure" },
-        "2024": { "rate": 0.22, "status": "pure" }
+        "2024": { "rate": 0.22, "status": "pure" },
+        "2025": { "rate": 0.33, "status": "pure" }
       }
     },
     {
@@ -619,7 +684,8 @@
         "2021": { "rate": 0.0482, "status": "pure" },
         "2022": { "rate": 0.061, "status": "pure" },
         "2023": { "rate": 0.038, "status": "pure" },
-        "2024": { "rate": 0.06, "status": "pure" }
+        "2024": { "rate": 0.06, "status": "pure" },
+        "2025": { "rate": 0.05, "status": "pure" }
       }
     },
     {
@@ -636,7 +702,8 @@
         "2021": { "rate": 0.0074, "status": "mixed" },
         "2022": { "rate": 0.013, "status": "pure" },
         "2023": { "rate": 0.008, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.07, "status": "pure" }
       }
     },
     {
@@ -653,7 +720,8 @@
         "2021": { "rate": 0.0105, "status": "pure" },
         "2022": { "rate": 0.012, "status": "mixed" },
         "2023": { "rate": 0.0081, "status": "pure" },
-        "2024": { "rate": 0, "status": "mixed" }
+        "2024": { "rate": 0, "status": "mixed" },
+        "2025": { "rate": 0.02, "status": "mixed" }
       }
     },
     {
@@ -670,7 +738,8 @@
         "2021": { "rate": 0.0393, "status": "pure" },
         "2022": { "rate": 0.051, "status": "pure" },
         "2023": { "rate": 0.0526, "status": "pure" },
-        "2024": { "rate": 0.05, "status": "pure" }
+        "2024": { "rate": 0.05, "status": "pure" },
+        "2025": { "rate": 0.05, "status": "pure" }
       }
     },
     {
@@ -687,7 +756,8 @@
         "2021": { "rate": 0.0562, "status": "pure" },
         "2022": { "rate": 0.195, "status": "pure" },
         "2023": { "rate": 0.1909, "status": "pure" },
-        "2024": { "rate": 0.05, "status": "pure" }
+        "2024": { "rate": 0.05, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -704,7 +774,8 @@
         "2021": { "rate": 0.1057, "status": "pure" },
         "2022": { "rate": 0.098, "status": "pure" },
         "2023": { "rate": 0.0778, "status": "pure" },
-        "2024": { "rate": 0.18, "status": "pure" }
+        "2024": { "rate": 0.18, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -721,7 +792,8 @@
         "2021": { "rate": 0.0187, "status": "pure" },
         "2022": { "rate": 0.006, "status": "pure" },
         "2023": { "rate": 0.0259, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "mixed" }
       }
     },
     {
@@ -729,7 +801,8 @@
       "name": "سيسكو القابضة",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.07, "status": "mixed" }
+        "2024": { "rate": 0.07, "status": "mixed" },
+        "2025": { "rate": 0.08, "status": "mixed" }
       }
     },
     {
@@ -746,7 +819,8 @@
         "2021": { "rate": 0.0021, "status": "mixed" },
         "2022": { "rate": 0.115, "status": "mixed" },
         "2023": { "rate": 0.1, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -780,7 +854,8 @@
         "2021": { "rate": 0.0419, "status": "mixed" },
         "2022": { "rate": 0.051, "status": "mixed" },
         "2023": { "rate": 0.0169, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "mixed" }
       }
     },
     {
@@ -793,7 +868,8 @@
         "2021": { "rate": 0.0228, "status": "public-sector" },
         "2022": { "rate": 0.067, "status": "public-sector" },
         "2023": { "rate": 0.1083, "status": "public-sector" },
-        "2024": { "rate": 0.08, "status": "public-sector" }
+        "2024": { "rate": 0.08, "status": "public-sector" },
+        "2025": { "rate": 0.05, "status": "public-sector" }
       }
     },
     {
@@ -803,7 +879,8 @@
       "years": {
         "2022": { "rate": 0.192, "status": "mixed" },
         "2023": { "rate": 0.0647, "status": "pure" },
-        "2024": { "rate": 0.08, "status": "pure" }
+        "2024": { "rate": 0.08, "status": "pure" },
+        "2025": { "rate": 0.05, "status": "pure" }
       }
     },
     {
@@ -820,7 +897,8 @@
         "2021": { "rate": 0.0119, "status": "mixed" },
         "2022": { "rate": 0.022, "status": "pure" },
         "2023": { "rate": 0.0025, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -837,7 +915,8 @@
         "2021": { "rate": 0.0454, "status": "pure" },
         "2022": { "rate": 0.101, "status": "mixed" },
         "2023": { "rate": 0.1613, "status": "mixed" },
-        "2024": { "rate": 0.6, "status": "pure" }
+        "2024": { "rate": 0.6, "status": "pure" },
+        "2025": { "rate": 0.51, "status": "mixed" }
       }
     },
     {
@@ -854,7 +933,8 @@
         "2021": { "rate": 0.0008, "status": "pure" },
         "2022": { "rate": 0.001, "status": "pure" },
         "2023": { "rate": 0.041, "status": "pure" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -882,7 +962,8 @@
         "2021": { "rate": 0.0139, "status": "pure" },
         "2022": { "rate": 0.028, "status": "pure" },
         "2023": { "rate": 0.0584, "status": "pure" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -899,7 +980,8 @@
         "2021": { "rate": 0.0097, "status": "mixed" },
         "2022": { "rate": 0.01, "status": "pure" },
         "2023": { "rate": 0.013, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -910,7 +992,8 @@
         "2021": { "rate": 0.0885, "status": "mixed" },
         "2022": { "rate": 0.265, "status": "mixed" },
         "2023": { "rate": 0.1175, "status": "pure" },
-        "2024": { "rate": 0.1, "status": "pure" }
+        "2024": { "rate": 0.1, "status": "pure" },
+        "2025": { "rate": 0.07, "status": "pure" }
       }
     },
     {
@@ -920,7 +1003,8 @@
       "years": {
         "2022": { "rate": 0.068, "status": "mixed" },
         "2023": { "rate": 0.0113, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -930,7 +1014,8 @@
       "years": {
         "2022": { "rate": 0.078, "status": "pure" },
         "2023": { "rate": 0.0692, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "mixed" }
+        "2024": { "rate": 0.15, "status": "mixed" },
+        "2025": { "rate": 0.08, "status": "pure" }
       }
     },
     {
@@ -939,7 +1024,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0681, "status": "mixed" },
-        "2024": { "rate": 0.12, "status": "mixed" }
+        "2024": { "rate": 0.12, "status": "mixed" },
+        "2025": { "rate": 0.05, "status": "pure" }
       }
     },
     {
@@ -947,7 +1033,8 @@
       "name": "المطاحن العربية",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.09, "status": "pure" }
       }
     },
     {
@@ -955,7 +1042,8 @@
       "name": "المطاحن الرابعة",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -963,7 +1051,16 @@
       "name": "إنتاج",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.11, "status": "pure" }
+        "2024": { "rate": 0.11, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 2288,
+      "name": "نفوذ",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -980,7 +1077,8 @@
         "2021": { "rate": 0.0007, "status": "pure" },
         "2022": { "rate": 0.003, "status": "pure" },
         "2023": { "rate": 0.0028, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -997,7 +1095,8 @@
         "2021": { "rate": 0.0011, "status": "mixed" },
         "2022": { "rate": 0.004, "status": "mixed" },
         "2023": { "rate": 0.0011, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "mixed" }
+        "2024": { "rate": 0.01, "status": "mixed" },
+        "2025": { "rate": 0, "status": "mixed" }
       }
     },
     {
@@ -1014,7 +1113,8 @@
         "2021": { "rate": 0.0332, "status": "pure" },
         "2022": { "rate": 0.05, "status": "pure" },
         "2023": { "rate": 0.0378, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -1031,7 +1131,8 @@
         "2021": { "rate": 0.0549, "status": "mixed" },
         "2022": { "rate": 0.091, "status": "pure" },
         "2023": { "rate": 0.0652, "status": "pure" },
-        "2024": { "rate": 0.05, "status": "pure" }
+        "2024": { "rate": 0.05, "status": "pure" },
+        "2025": { "rate": 0.05, "status": "pure" }
       }
     },
     {
@@ -1048,7 +1149,8 @@
         "2021": { "rate": 0.026, "status": "pure" },
         "2022": { "rate": 0.018, "status": "pure" },
         "2023": { "rate": 0.0203, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1065,7 +1167,8 @@
         "2021": { "rate": 0.0115, "status": "pure" },
         "2022": { "rate": 0.023, "status": "pure" },
         "2023": { "rate": 0.0188, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1082,7 +1185,8 @@
         "2021": { "rate": 0.0055, "status": "mixed" },
         "2022": { "rate": 0.001, "status": "pure" },
         "2023": { "rate": 0.001, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1099,7 +1203,8 @@
         "2021": { "rate": 0.0241, "status": "pure" },
         "2022": { "rate": 0.054, "status": "pure" },
         "2023": { "rate": 0.1365, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "mixed" }
       }
     },
     {
@@ -1107,7 +1212,8 @@
       "name": "مسك",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "mixed" }
       }
     },
     {
@@ -1124,15 +1230,17 @@
         "2021": { "rate": 0.2712, "status": "mixed" },
         "2022": { "rate": 0.192, "status": "mixed" },
         "2023": { "rate": 0.0165, "status": "mixed" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "mixed" },
+        "2025": { "rate": 0.03, "status": "mixed" }
       }
     },
     {
       "ticker": 2381,
-      "name": "المجموعة السعودية",
+      "name": "الحفر العربية",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.38, "status": "pure" }
+        "2024": { "rate": 0.38, "status": "pure" },
+        "2025": { "rate": 0.1, "status": "pure" }
       }
     },
     {
@@ -1141,7 +1249,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0077, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "mixed" }
+        "2024": { "rate": 0.01, "status": "mixed" },
+        "2025": { "rate": 0.04, "status": "mixed" }
       }
     },
     {
@@ -1174,7 +1283,8 @@
         "2021": { "rate": 0.0013, "status": "pure" },
         "2022": { "rate": 0.002, "status": "pure" },
         "2023": { "rate": 0.0019, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1191,7 +1301,8 @@
         "2021": { "rate": 0.0084, "status": "pure" },
         "2022": { "rate": 0.01, "status": "pure" },
         "2023": { "rate": 0.0086, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1208,7 +1319,8 @@
         "2021": { "rate": 0.0022, "status": "mixed" },
         "2022": { "rate": 0.004, "status": "mixed" },
         "2023": { "rate": 0.0063, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1225,7 +1337,8 @@
         "2021": { "rate": 0.0036, "status": "pure" },
         "2022": { "rate": 0.002, "status": "pure" },
         "2023": { "rate": 0.0052, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1233,7 +1346,8 @@
       "name": "الواحة",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1246,7 +1360,8 @@
         "2021": { "rate": 0.0031, "status": "pure" },
         "2022": { "rate": 0.003, "status": "pure" },
         "2023": { "rate": 0.0094, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "mixed" }
+        "2024": { "rate": 0.01, "status": "mixed" },
+        "2025": { "rate": 0, "status": "mixed" }
       }
     },
     {
@@ -1263,7 +1378,8 @@
         "2021": { "rate": 0.0201, "status": "mixed" },
         "2022": { "rate": 0.037, "status": "mixed" },
         "2023": { "rate": 0.022, "status": "mixed" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.21, "status": "pure" }
       }
     },
     {
@@ -1280,7 +1396,8 @@
         "2021": { "rate": 0.01, "status": "pure" },
         "2022": { "rate": 0.014, "status": "pure" },
         "2023": { "rate": 0.0225, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1297,7 +1414,8 @@
         "2021": { "rate": 0.005, "status": "pure" },
         "2022": { "rate": 0.013, "status": "pure" },
         "2023": { "rate": 0.0153, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1314,7 +1432,8 @@
         "2021": { "rate": 0.0292, "status": "pure" },
         "2022": { "rate": 0.028, "status": "pure" },
         "2023": { "rate": 0.0221, "status": "pure" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1331,7 +1450,8 @@
         "2021": { "rate": 0.005, "status": "mixed" },
         "2022": { "rate": 0.017, "status": "mixed" },
         "2023": { "rate": 0.0204, "status": "mixed" },
-        "2024": { "rate": 0.02, "status": "mixed" }
+        "2024": { "rate": 0.02, "status": "mixed" },
+        "2025": { "rate": 0.01, "status": "mixed" }
       }
     },
     {
@@ -1348,7 +1468,8 @@
         "2021": { "rate": 0.004, "status": "pure" },
         "2022": { "rate": 0.013, "status": "pure" },
         "2023": { "rate": 0.0094, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "mixed" }
+        "2024": { "rate": 0.01, "status": "mixed" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1365,7 +1486,8 @@
         "2021": { "rate": 0.031, "status": "pure" },
         "2022": { "rate": 0.037, "status": "pure" },
         "2023": { "rate": 0.0413, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -1382,7 +1504,8 @@
         "2021": { "rate": 0.0104, "status": "pure" },
         "2022": { "rate": 0.014, "status": "pure" },
         "2023": { "rate": 0.014, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1399,7 +1522,8 @@
         "2021": { "rate": 0.0019, "status": "pure" },
         "2022": { "rate": 0.003, "status": "pure" },
         "2023": { "rate": 0.0023, "status": "pure" },
-        "2024": { "rate": 0, "status": "mixed" }
+        "2024": { "rate": 0, "status": "mixed" },
+        "2025": { "rate": 0, "status": "mixed" }
       }
     },
     {
@@ -1407,7 +1531,8 @@
       "name": "إسمنت الرياض",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.08, "status": "mixed" }
+        "2024": { "rate": 0.08, "status": "mixed" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1424,7 +1549,8 @@
         "2021": { "rate": 0.0254, "status": "pure" },
         "2022": { "rate": 0.069, "status": "pure" },
         "2023": { "rate": 0.0033, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1441,7 +1567,8 @@
         "2021": { "rate": 0.0113, "status": "pure" },
         "2022": { "rate": 0.029, "status": "pure" },
         "2023": { "rate": 0.0052, "status": "pure" },
-        "2024": { "rate": 0.09, "status": "mixed" }
+        "2024": { "rate": 0.09, "status": "mixed" },
+        "2025": { "rate": 0.14, "status": "mixed" }
       }
     },
     {
@@ -1458,7 +1585,8 @@
         "2021": { "rate": 0.0275, "status": "pure" },
         "2022": { "rate": 0.033, "status": "pure" },
         "2023": { "rate": 0.0356, "status": "pure" },
-        "2024": { "rate": 0.09, "status": "mixed" }
+        "2024": { "rate": 0.09, "status": "mixed" },
+        "2025": { "rate": 0.05, "status": "pure" }
       }
     },
     {
@@ -1475,7 +1603,8 @@
         "2021": { "rate": 0.0367, "status": "pure" },
         "2022": { "rate": 0.066, "status": "pure" },
         "2023": { "rate": 0.0847, "status": "pure" },
-        "2024": { "rate": 0.07, "status": "pure" }
+        "2024": { "rate": 0.07, "status": "pure" },
+        "2025": { "rate": 0.06, "status": "pure" }
       }
     },
     {
@@ -1492,7 +1621,8 @@
         "2021": { "rate": 0.0837, "status": "pure" },
         "2022": { "rate": 0.091, "status": "mixed" },
         "2023": { "rate": 0.6649, "status": "pure" },
-        "2024": { "rate": 0.52, "status": "mixed" }
+        "2024": { "rate": 0.52, "status": "mixed" },
+        "2025": { "rate": 0.57, "status": "mixed" }
       }
     },
     {
@@ -1500,7 +1630,8 @@
       "name": "أسواق المزرعة",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.09, "status": "mixed" }
+        "2024": { "rate": 0.01, "status": "mixed" },
+        "2025": { "rate": 0.01, "status": "mixed" }
       }
     },
     {
@@ -1517,7 +1648,8 @@
         "2021": { "rate": 0.0125, "status": "pure" },
         "2022": { "rate": 0.009, "status": "pure" },
         "2023": { "rate": 0.0176, "status": "pure" },
-        "2024": { "rate": 0.06, "status": "mixed" }
+        "2024": { "rate": 0.06, "status": "mixed" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -1534,7 +1666,8 @@
         "2021": { "rate": 0.0052, "status": "pure" },
         "2022": { "rate": 0.015, "status": "pure" },
         "2023": { "rate": 0.0083, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -1550,7 +1683,8 @@
         "2021": { "rate": 0.003, "status": "mixed" },
         "2022": { "rate": 0.003, "status": "mixed" },
         "2023": { "rate": 0.0094, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "mixed" }
+        "2024": { "rate": 0.01, "status": "mixed" },
+        "2025": { "rate": 0.01, "status": "mixed" }
       }
     },
     {
@@ -1582,7 +1716,8 @@
         "2021": { "rate": 0.011, "status": "pure" },
         "2022": { "rate": 0.017, "status": "pure" },
         "2023": { "rate": 0.0111, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -1597,7 +1732,8 @@
         "2021": { "rate": 0.0336, "status": "pure" },
         "2022": { "rate": 0.048, "status": "pure" },
         "2023": { "rate": 0.0065, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1610,7 +1746,8 @@
         "2021": { "rate": 0.0165, "status": "pure" },
         "2022": { "rate": 0.031, "status": "pure" },
         "2023": { "rate": 0.0312, "status": "pure" },
-        "2024": { "rate": 0.11, "status": "pure" }
+        "2024": { "rate": 0.11, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -1621,7 +1758,8 @@
         "2021": { "rate": 0.0241, "status": "mixed" },
         "2022": { "rate": 0.054, "status": "pure" },
         "2023": { "rate": 0.0103, "status": "pure" },
-        "2024": { "rate": 0.06, "status": "pure" }
+        "2024": { "rate": 0.06, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1631,7 +1769,8 @@
       "years": {
         "2022": { "rate": 0.004, "status": "pure" },
         "2023": { "rate": 0.0827, "status": "pure" },
-        "2024": { "rate": 0.14, "status": "mixed" }
+        "2024": { "rate": 0.14, "status": "mixed" },
+        "2025": { "rate": 0.12, "status": "mixed" }
       }
     },
     {
@@ -1640,7 +1779,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0146, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -1649,15 +1789,25 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.2068, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "mixed" }
+        "2024": { "rate": 0.01, "status": "mixed" },
+        "2025": { "rate": 0.01, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 4018,
+      "name": "الموسى",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.16, "status": "mixed" }
       }
     },
     {
       "ticker": 4019,
-      "name": "اس ام سي للرعايةالصحية",
+      "name": "اس ام سي للرعاية الصحية",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "mixed" }
+        "2024": { "rate": 0.01, "status": "mixed" },
+        "2025": { "rate": 0.03, "status": "mixed" }
       }
     },
     {
@@ -1674,7 +1824,16 @@
         "2021": { "rate": 0.0253, "status": "mixed" },
         "2022": { "rate": 0.045, "status": "mixed" },
         "2023": { "rate": 0.1394, "status": "mixed" },
-        "2024": { "rate": 0.13, "status": "mixed" }
+        "2024": { "rate": 0.13, "status": "mixed" },
+        "2025": { "rate": 0.05, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4021,
+      "name": "المركز الكندي الطبي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1691,7 +1850,8 @@
         "2021": { "rate": 0.0313, "status": "pure" },
         "2022": { "rate": 0.062, "status": "pure" },
         "2023": { "rate": 0.0345, "status": "pure" },
-        "2024": { "rate": 0.16, "status": "pure" }
+        "2024": { "rate": 0.16, "status": "pure" },
+        "2025": { "rate": 0.06, "status": "pure" }
       }
     },
     {
@@ -1708,7 +1868,8 @@
         "2021": { "rate": 0.028, "status": "mixed" },
         "2022": { "rate": 0.011, "status": "mixed" },
         "2023": { "rate": 0.006, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -1725,7 +1886,8 @@
         "2021": { "rate": 0.0854, "status": "mixed" },
         "2022": { "rate": 0.165, "status": "pure" },
         "2023": { "rate": 0.0538, "status": "pure" },
-        "2024": { "rate": 0.07, "status": "pure" }
+        "2024": { "rate": 0.07, "status": "pure" },
+        "2025": { "rate": 0.05, "status": "pure" }
       }
     },
     {
@@ -1742,7 +1904,8 @@
         "2021": { "rate": 0.0325, "status": "pure" },
         "2022": { "rate": 0.0203, "status": "mixed" },
         "2023": { "rate": 0.0725, "status": "pure" },
-        "2024": { "rate": 0.3, "status": "pure" }
+        "2024": { "rate": 0.3, "status": "pure" },
+        "2025": { "rate": 0.32, "status": "pure" }
       }
     },
     {
@@ -1755,7 +1918,8 @@
         "2021": { "rate": 0.0302, "status": "pure" },
         "2022": { "rate": 0.09, "status": "pure" },
         "2023": { "rate": 0.0387, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1772,7 +1936,16 @@
         "2021": { "rate": 0.0919, "status": "pure" },
         "2022": { "rate": 0.007, "status": "pure" },
         "2023": { "rate": 0.0013, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4070,
+      "name": "تهامة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -1783,14 +1956,17 @@
         "2021": { "rate": 0.0379, "status": "mixed" },
         "2022": { "rate": 0.046, "status": "mixed" },
         "2023": { "rate": 0.0843, "status": "mixed" },
-        "2024": { "rate": 0.13, "status": "mixed" }
+        "2024": { "rate": 0.13, "status": "pure" },
+        "2025": { "rate": 0.06, "status": "mixed" }
       }
     },
     {
       "ticker": 4072,
       "name": "أم بي سي",
       "aliases": [],
-      "years": {}
+      "years": {
+        "2025": { "rate": 0.25, "status": "mixed" }
+      }
     },
     {
       "ticker": 4080,
@@ -1806,7 +1982,8 @@
         "2021": { "rate": 0.0251, "status": "pure" },
         "2022": { "rate": 0.059, "status": "pure" },
         "2023": { "rate": 0.035, "status": "mixed" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -1817,7 +1994,8 @@
         "2021": { "rate": 0.0059, "status": "pure" },
         "2022": { "rate": 0.009, "status": "pure" },
         "2023": { "rate": 0.0103, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -1827,7 +2005,8 @@
       "years": {
         "2022": { "rate": 0.0018, "status": "pure" },
         "2023": { "rate": 0.0257, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -1835,7 +2014,8 @@
       "name": "تسهيل",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -1843,7 +2023,8 @@
       "name": "دراية",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.83, "status": "non-pure" }
+        "2024": { "rate": 0.83, "status": "non-pure" },
+        "2025": { "rate": 0.81, "status": "non-pure" }
       }
     },
     {
@@ -1860,7 +2041,8 @@
         "2021": { "rate": 0.0201, "status": "pure" },
         "2022": { "rate": 0.032, "status": "pure" },
         "2023": { "rate": 0.0322, "status": "pure" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -1877,7 +2059,8 @@
         "2021": { "rate": 0.0524, "status": "pure" },
         "2022": { "rate": 0.067, "status": "pure" },
         "2023": { "rate": 0.0695, "status": "pure" },
-        "2024": { "rate": 0.05, "status": "pure" }
+        "2024": { "rate": 0.05, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -1885,7 +2068,8 @@
       "name": "باتك",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1901,7 +2085,8 @@
         "2021": { "rate": 0.003, "status": "pure" },
         "2022": { "rate": 0.036, "status": "mixed" },
         "2023": { "rate": 0, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1918,7 +2103,8 @@
         "2021": { "rate": 0.0115, "status": "pure" },
         "2022": { "rate": 0.113, "status": "non-pure" },
         "2023": { "rate": 0.0854, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1926,7 +2112,8 @@
       "name": "العمران",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.02, "status": "mixed" }
+        "2024": { "rate": 0.02, "status": "mixed" },
+        "2025": { "rate": 0.01, "status": "mixed" }
       }
     },
     {
@@ -1936,7 +2123,8 @@
       "years": {
         "2022": { "rate": 0.015, "status": "pure" },
         "2023": { "rate": 0.0208, "status": "mixed" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -1945,7 +2133,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0384, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0.07, "status": "pure" }
       }
     },
     {
@@ -1953,15 +2142,41 @@
       "name": "رؤوم",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.011, "status": "pure" }
+        "2024": { "rate": 0.11, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
       "ticker": 4145,
-      "name": "العبيكان للزجاج",
+      "name": "أو جي سي",
+      "aliases": ["العبيكان للزجاج"],
+      "years": {
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4146,
+      "name": "جاز",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4147,
+      "name": "سي جي إس",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4148,
+      "name": "الوسائل الصناعية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -1978,7 +2193,8 @@
         "2021": { "rate": 0.0057, "status": "pure" },
         "2022": { "rate": 0.007, "status": "pure" },
         "2023": { "rate": 0.0085, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -1991,7 +2207,8 @@
         "2017": { "rate": 0.0017, "status": "mixed" },
         "2018": { "rate": 0.0135, "status": "mixed" },
         "2022": { "rate": 0.022, "status": "non-pure" },
-        "2024": { "rate": 0.07, "status": "pure" }
+        "2024": { "rate": 0.07, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -2003,7 +2220,8 @@
         "2021": { "rate": 0.0417, "status": "mixed" },
         "2022": { "rate": 0.139, "status": "mixed" },
         "2023": { "rate": 0.0055, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2014,7 +2232,8 @@
         "2021": { "rate": 0.0138, "status": "pure" },
         "2022": { "rate": 0.022, "status": "pure" },
         "2023": { "rate": 0.0457, "status": "pure" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -2025,7 +2244,8 @@
         "2021": { "rate": 0.0107, "status": "pure" },
         "2022": { "rate": 0.038, "status": "pure" },
         "2023": { "rate": 0.0161, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -2036,7 +2256,8 @@
         "2021": { "rate": 0.0263, "status": "pure" },
         "2022": { "rate": 0.155, "status": "pure" },
         "2023": { "rate": 0.1596, "status": "mixed" },
-        "2024": { "rate": 0.14, "status": "pure" }
+        "2024": { "rate": 0.14, "status": "pure" },
+        "2025": { "rate": 0.07, "status": "pure" }
       }
     },
     {
@@ -2044,7 +2265,8 @@
       "name": "الماجد",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.13, "status": "pure" }
       }
     },
     {
@@ -2061,7 +2283,8 @@
         "2021": { "rate": 0.0253, "status": "pure" },
         "2022": { "rate": 0.003, "status": "pure" },
         "2023": { "rate": 0.0002, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2078,7 +2301,8 @@
         "2021": { "rate": 0.0394, "status": "pure" },
         "2022": { "rate": 0.055, "status": "pure" },
         "2023": { "rate": 0.0034, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2095,7 +2319,8 @@
         "2021": { "rate": 0.0363, "status": "pure" },
         "2022": { "rate": 0.087, "status": "pure" },
         "2023": { "rate": 0.0008, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2103,7 +2328,8 @@
       "name": "أبو معطي",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2113,7 +2339,8 @@
       "years": {
         "2022": { "rate": 0.026, "status": "pure" },
         "2023": { "rate": 0.0012, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2121,7 +2348,16 @@
       "name": "نايس ون",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.05, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4194,
+      "name": "محطة البناء",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.08, "status": "pure" }
       }
     },
     {
@@ -2138,7 +2374,16 @@
         "2021": { "rate": 0.0376, "status": "pure" },
         "2022": { "rate": 0.04, "status": "pure" },
         "2023": { "rate": 0.0624, "status": "pure" },
-        "2024": { "rate": 0.23, "status": "pure" }
+        "2024": { "rate": 0.23, "status": "pure" },
+        "2025": { "rate": 0.45, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4210,
+      "name": "الأبحاث والإعلام",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.33, "status": "mixed" }
       }
     },
     {
@@ -2155,7 +2400,8 @@
         "2021": { "rate": 0.0083, "status": "mixed" },
         "2022": { "rate": 0.008, "status": "mixed" },
         "2023": { "rate": 0.0094, "status": "mixed" },
-        "2024": { "rate": 0.02, "status": "non-pure" }
+        "2024": { "rate": 0.02, "status": "non-pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -2172,13 +2418,14 @@
         "2021": { "rate": 0.0013, "status": "mixed" },
         "2022": { "rate": 0.023, "status": "pure" },
         "2023": { "rate": 0.1024, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "mixed" }
       }
     },
     {
       "ticker": 4240,
-      "name": "سينومي ريتيل",
-      "aliases": ["فواز الحكير"],
+      "name": "إيه إف جي ريتيل",
+      "aliases": ["سينومي ريتيل","فواز الحكير"],
       "years": {
         "2015": { "rate": 0.0073, "status": "mixed" },
         "2017": { "rate": 0.007, "status": "pure" },
@@ -2187,7 +2434,8 @@
         "2020": { "rate": 0.0088, "status": "mixed" },
         "2022": { "rate": 0.028, "status": "mixed" },
         "2023": { "rate": 0.0407, "status": "mixed" },
-        "2024": { "rate": 0.04, "status": "mixed" }
+        "2024": { "rate": 0.04, "status": "mixed" },
+        "2025": { "rate": 0.04, "status": "non-pure" }
       }
     },
     {
@@ -2204,7 +2452,8 @@
         "2021": { "rate": 0.0109, "status": "mixed" },
         "2022": { "rate": 0.013, "status": "mixed" },
         "2023": { "rate": 0.0106, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "mixed" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2221,7 +2470,8 @@
         "2021": { "rate": 0.0255, "status": "mixed" },
         "2022": { "rate": 0.007, "status": "pure" },
         "2023": { "rate": 0.009, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2233,7 +2483,8 @@
         "2021": { "rate": 0.0133, "status": "mixed" },
         "2022": { "rate": 0.046, "status": "non-pure" },
         "2023": { "rate": 0.0239, "status": "non-pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2242,7 +2493,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0155, "status": "non-pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2251,7 +2503,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0556, "status": "mixed" },
-        "2024": { "rate": 0.34, "status": "mixed" }
+        "2024": { "rate": 0.34, "status": "mixed" },
+        "2025": { "rate": 0.05, "status": "mixed" }
       }
     },
     {
@@ -2259,7 +2512,16 @@
       "name": "ناس",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.53, "status": "pure" }
+        "2024": { "rate": 0.53, "status": "pure" },
+        "2025": { "rate": 1.19, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 4265,
+      "name": "شري",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -2267,7 +2529,16 @@
       "name": "طباعة وتغليف",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "non-pure" }
+        "2024": { "rate": 0.01, "status": "non-pure" },
+        "2025": { "rate": 0.01, "status": "non-pure" }
+      }
+    },
+    {
+      "ticker": 4280,
+      "name": "المملكة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.06, "status": "mixed" }
       }
     },
     {
@@ -2284,7 +2555,8 @@
         "2021": { "rate": 0.0317, "status": "mixed" },
         "2022": { "rate": 0.057, "status": "mixed" },
         "2023": { "rate": 0.0145, "status": "pure" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -2298,7 +2570,8 @@
         "2021": { "rate": 0.0122, "status": "pure" },
         "2022": { "rate": 0.03, "status": "pure" },
         "2023": { "rate": 0.0343, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2310,7 +2583,8 @@
         "2020": { "rate": 0.0005, "status": "mixed" },
         "2021": { "rate": 0.002, "status": "pure" },
         "2022": { "rate": 0.023, "status": "pure" },
-        "2023": { "rate": 0.0186, "status": "pure" }
+        "2023": { "rate": 0.0186, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -2327,7 +2601,8 @@
         "2021": { "rate": 0.0414, "status": "pure" },
         "2022": { "rate": 0.113, "status": "pure" },
         "2023": { "rate": 0.1038, "status": "pure" },
-        "2024": { "rate": 0.15, "status": "pure" }
+        "2024": { "rate": 0.15, "status": "pure" },
+        "2025": { "rate": 0.24, "status": "pure" }
       }
     },
     {
@@ -2344,7 +2619,8 @@
         "2021": { "rate": 0.0016, "status": "pure" },
         "2022": { "rate": 0.005, "status": "pure" },
         "2023": { "rate": 0.0041, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2361,7 +2637,8 @@
         "2021": { "rate": 0.0355, "status": "pure" },
         "2022": { "rate": 0.044, "status": "pure" },
         "2023": { "rate": 0.0651, "status": "pure" },
-        "2024": { "rate": 0.06, "status": "pure" }
+        "2024": { "rate": 0.06, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -2373,7 +2650,8 @@
         "2020": { "rate": 0.0141, "status": "pure" },
         "2022": { "rate": 0.016, "status": "pure" },
         "2023": { "rate": 0.0056, "status": "pure" },
-        "2024": { "rate": 0.06, "status": "pure" }
+        "2024": { "rate": 0.06, "status": "pure" },
+        "2025": { "rate": 0.21, "status": "pure" }
       }
     },
     {
@@ -2383,7 +2661,8 @@
       "years": {
         "2022": { "rate": 0.027, "status": "pure" },
         "2023": { "rate": 0.0292, "status": "pure" },
-        "2024": { "rate": 0.04, "status": "pure" }
+        "2024": { "rate": 0.04, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2392,7 +2671,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0826, "status": "pure" },
-        "2024": { "rate": 0.09, "status": "pure" }
+        "2024": { "rate": 0.09, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -2400,7 +2680,8 @@
       "name": "بنان",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2408,7 +2689,32 @@
       "name": "مسار",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4326,
+      "name": "الماجدية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4327,
+      "name": "الرمز",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.12, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4328,
+      "name": "لدن",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2416,7 +2722,8 @@
       "name": "الرياض ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -2424,7 +2731,8 @@
       "name": "الجزيرة ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2432,7 +2740,8 @@
       "name": "تعليم ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2440,7 +2749,8 @@
       "name": "المعذر ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.29, "status": "non-pure" }
+        "2024": { "rate": 0.29, "status": "non-pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2448,7 +2758,8 @@
       "name": "مشاركة ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2456,7 +2767,8 @@
       "name": "ملكية ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2464,7 +2776,16 @@
       "name": "العزيزية ريت",
       "aliases": ["سيكو السعودية ريت"],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 4338,
+      "name": "الأهلي ريت ١",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2472,7 +2793,8 @@
       "name": "دراية ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2480,7 +2802,8 @@
       "name": "الراجحي ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2488,7 +2811,8 @@
       "name": "جدوى ريت السعودية",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2496,7 +2820,8 @@
       "name": "سدكو كابيتال ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2504,7 +2829,8 @@
       "name": "الإنماء ريت للتجزئة",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2512,7 +2838,8 @@
       "name": "ميفك ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2520,7 +2847,8 @@
       "name": "بنيان ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2528,7 +2856,8 @@
       "name": "الخبير ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2536,7 +2865,8 @@
       "name": "الإنماء ريت الفندقي",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2544,7 +2874,8 @@
       "name": "الاستثمار ريت",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.04, "status": "mixed" }
+        "2024": { "rate": 0.04, "status": "mixed" },
+        "2025": { "rate": 0.06, "status": "pure" }
       }
     },
     {
@@ -2561,7 +2892,8 @@
         "2021": { "rate": 0.0239, "status": "mixed" },
         "2022": { "rate": 0.032, "status": "mixed" },
         "2023": { "rate": 0.0825, "status": "mixed" },
-        "2024": { "rate": 0.06, "status": "mixed" }
+        "2024": { "rate": 0.06, "status": "mixed" },
+        "2025": { "rate": 0.04, "status": "mixed" }
       }
     },
     {
@@ -2577,7 +2909,8 @@
         "2020": { "rate": 0.0057, "status": "pure" },
         "2021": { "rate": 0.0241, "status": "pure" },
         "2022": { "rate": 0.053, "status": "pure" },
-        "2023": { "rate": 0.1657, "status": "mixed" }
+        "2023": { "rate": 0.1657, "status": "mixed" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2594,7 +2927,8 @@
         "2021": { "rate": 0.0034, "status": "pure" },
         "2022": { "rate": 0.006, "status": "pure" },
         "2023": { "rate": 0.0092, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
       }
     },
     {
@@ -2611,7 +2945,8 @@
         "2021": { "rate": 0.0215, "status": "pure" },
         "2022": { "rate": 0.078, "status": "pure" },
         "2023": { "rate": 0.0825, "status": "pure" },
-        "2024": { "rate": 0.08, "status": "mixed" }
+        "2024": { "rate": 0.08, "status": "mixed" },
+        "2025": { "rate": 0.04, "status": "mixed" }
       }
     },
     {
@@ -2628,7 +2963,8 @@
         "2021": { "rate": 0.0098, "status": "pure" },
         "2022": { "rate": 0.022, "status": "pure" },
         "2023": { "rate": 0.0227, "status": "pure" },
-        "2024": { "rate": 0.02, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -2641,7 +2977,8 @@
         "2021": { "rate": 0.0274, "status": "pure" },
         "2022": { "rate": 0.042, "status": "pure" },
         "2023": { "rate": 0.0139, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2649,7 +2986,8 @@
       "name": "التطويرية للأغذية",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2658,7 +2996,8 @@
       "aliases": [],
       "years": {
         "2023": { "rate": 0.0416, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.02, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -2668,7 +3007,8 @@
       "years": {
         "2022": { "rate": 0.002, "status": "mixed" },
         "2023": { "rate": 0.0007, "status": "pure" },
-        "2024": { "rate": 0, "status": "mixed" }
+        "2024": { "rate": 0, "status": "mixed" },
+        "2025": { "rate": 0, "status": "mixed" }
       }
     },
     {
@@ -2676,7 +3016,8 @@
       "name": "برغرايززر",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2684,7 +3025,8 @@
       "name": "جاهز",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.3, "status": "non-pure" }
+        "2024": { "rate": 0.3, "status": "non-pure" },
+        "2025": { "rate": 0.2, "status": "pure" }
       }
     },
     {
@@ -2692,7 +3034,16 @@
       "name": "الأندية للرياضة",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0, "status": "mixed" }
+        "2024": { "rate": 0, "status": "mixed" },
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 6019,
+      "name": "المسار الشامل",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.12, "status": "mixed" }
       }
     },
     {
@@ -2709,7 +3060,16 @@
         "2021": { "rate": 0.0077, "status": "pure" },
         "2022": { "rate": 0.009, "status": "pure" },
         "2023": { "rate": 0.0181, "status": "pure" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 6022,
+      "name": "أرماح",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
       }
     },
     {
@@ -2726,7 +3086,8 @@
         "2021": { "rate": 0.0157, "status": "mixed" },
         "2022": { "rate": 0.01, "status": "mixed" },
         "2023": { "rate": 0.0052, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2743,7 +3104,8 @@
         "2021": { "rate": 0.051, "status": "mixed" },
         "2022": { "rate": 0.084, "status": "mixed" },
         "2023": { "rate": 0.0817, "status": "mixed" },
-        "2024": { "rate": 0.04, "status": "non-pure" }
+        "2024": { "rate": 0.04, "status": "non-pure" },
+        "2025": { "rate": 0.21, "status": "non-pure" }
       }
     },
     {
@@ -2760,7 +3122,8 @@
         "2021": { "rate": 0.0009, "status": "pure" },
         "2022": { "rate": 0.002, "status": "pure" },
         "2023": { "rate": 0.2724, "status": "non-pure" },
-        "2024": { "rate": 0.36, "status": "non-pure" }
+        "2024": { "rate": 0.36, "status": "non-pure" },
+        "2025": { "rate": 0.05, "status": "pure" }
       }
     },
     {
@@ -2777,7 +3140,8 @@
         "2021": { "rate": 0.0063, "status": "pure" },
         "2022": { "rate": 0.021, "status": "mixed" },
         "2023": { "rate": 0.0125, "status": "mixed" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2794,7 +3158,8 @@
         "2021": { "rate": 0.0101, "status": "mixed" },
         "2022": { "rate": 0.003, "status": "pure" },
         "2023": { "rate": 0.0113, "status": "mixed" },
-        "2024": { "rate": 0, "status": "pure" }
+        "2024": { "rate": 0, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2811,7 +3176,8 @@
         "2021": { "rate": 0.029, "status": "pure" },
         "2022": { "rate": 0.018, "status": "pure" },
         "2023": { "rate": 0.0129, "status": "pure" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.03, "status": "pure" }
       }
     },
     {
@@ -2828,7 +3194,8 @@
         "2021": { "rate": 0.0062, "status": "pure" },
         "2022": { "rate": 0.011, "status": "pure" },
         "2023": { "rate": 0.0202, "status": "pure" },
-        "2024": { "rate": 0.03, "status": "pure" }
+        "2024": { "rate": 0.03, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -2845,7 +3212,8 @@
         "2021": { "rate": 0.0072, "status": "mixed" },
         "2022": { "rate": 0.019, "status": "pure" },
         "2023": { "rate": 0.0941, "status": "pure" },
-        "2024": { "rate": 0.05, "status": "mixed" }
+        "2024": { "rate": 0.05, "status": "mixed" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -2857,7 +3225,8 @@
         "2021": { "rate": 0.0927, "status": "pure" },
         "2022": { "rate": 0.118, "status": "pure" },
         "2023": { "rate": 0.2559, "status": "pure" },
-        "2024": { "rate": 0.08, "status": "pure" }
+        "2024": { "rate": 0.08, "status": "pure" },
+        "2025": { "rate": 0.07, "status": "pure" }
       }
     },
     {
@@ -2870,7 +3239,8 @@
         "2021": { "rate": 0.0089, "status": "pure" },
         "2022": { "rate": 0.161, "status": "mixed" },
         "2023": { "rate": 0.222, "status": "mixed" },
-        "2024": { "rate": 0.41, "status": "mixed" }
+        "2024": { "rate": 0.41, "status": "mixed" },
+        "2025": { "rate": 0.37, "status": "mixed" }
       }
     },
     {
@@ -2881,7 +3251,8 @@
         "2016": { "rate": 0.0002, "status": "pure" },
         "2017": { "rate": 0.001, "status": "pure" },
         "2018": { "rate": 0.0003, "status": "mixed" },
-        "2024": { "rate": 0, "status": "mixed" }
+        "2024": { "rate": 0, "status": "mixed" },
+        "2025": { "rate": 0, "status": "mixed" }
       }
     },
     {
@@ -2892,7 +3263,8 @@
         "2021": { "rate": 0.002, "status": "pure" },
         "2022": { "rate": 0.022, "status": "pure" },
         "2023": { "rate": 0.0506, "status": "pure" },
-        "2024": { "rate": 0.05, "status": "pure" }
+        "2024": { "rate": 0.05, "status": "pure" },
+        "2025": { "rate": 0.04, "status": "pure" }
       }
     },
     {
@@ -2903,7 +3275,8 @@
         "2021": { "rate": 0.011, "status": "pure" },
         "2022": { "rate": 0.032, "status": "pure" },
         "2023": { "rate": 0.0884, "status": "pure" },
-        "2024": { "rate": 0.06, "status": "pure" }
+        "2024": { "rate": 0.06, "status": "pure" },
+        "2025": { "rate": 0.14, "status": "pure" }
       }
     },
     {
@@ -2913,7 +3286,8 @@
       "years": {
         "2022": { "rate": 0.087, "status": "mixed" },
         "2023": { "rate": 0.0067, "status": "pure" },
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     },
     {
@@ -2921,7 +3295,1192 @@
       "name": "عزم",
       "aliases": [],
       "years": {
-        "2024": { "rate": 0.01, "status": "pure" }
+        "2024": { "rate": 0.01, "status": "pure" },
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8010,
+      "name": "التعاونية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.27, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8012,
+      "name": "جزيرة تكافل",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.07, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8020,
+      "name": "ملاذ للتأمين",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.08, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8030,
+      "name": "ميدغلف للتأمين",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.28, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8040,
+      "name": "متكاملة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.5, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8050,
+      "name": "سلامة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.19, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8060,
+      "name": "ولاء",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.3, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8070,
+      "name": "الدرع العربي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.2, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8100,
+      "name": "سايكو",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.1, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8120,
+      "name": "إتحاد الخليج الأهلية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.59, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8150,
+      "name": "أسيج",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.28, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8160,
+      "name": "التأمين العربية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.72, "status": "non-pure" }
+      }
+    },
+    {
+      "ticker": 8170,
+      "name": "الاتحاد",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.08, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8180,
+      "name": "الصقر للتأمين",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.63, "status": "non-pure" }
+      }
+    },
+    {
+      "ticker": 8190,
+      "name": "المتحدة للتأمين",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.17, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8200,
+      "name": "الإعادة السعودية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.77, "status": "non-pure" }
+      }
+    },
+    {
+      "ticker": 8210,
+      "name": "بوبا العربية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.23, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8230,
+      "name": "تكافل الراجحي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.35, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8240,
+      "name": "تشب",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.43, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8250,
+      "name": "جي آي جي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.61, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8260,
+      "name": "الخليجية العامة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8280,
+      "name": "ليفا",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.67, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8300,
+      "name": "الوطنية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 1.54, "status": "non-pure" }
+      }
+    },
+    {
+      "ticker": 8310,
+      "name": "أمانة للتأمين",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.06, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 8311,
+      "name": "عناية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 8313,
+      "name": "رسن",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.32, "status": "non-pure" }
+      }
+    },
+    {
+      "ticker": 9300,
+      "name": "الواحة ريت",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9510,
+      "name": "الوطنية للبناء والتسويق",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.09, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9514,
+      "name": "الناقول",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9515,
+      "name": "فش فاش",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9516,
+      "name": "غاز",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.07, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9517,
+      "name": "موبي للصناعة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9521,
+      "name": "إنمار",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9522,
+      "name": "الحاسوب",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.08, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9523,
+      "name": "جروب فايف",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.19, "status": "non-pure" }
+      }
+    },
+    {
+      "ticker": 9524,
+      "name": "أيكتك",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9527,
+      "name": "ألف ميم ياء",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.1, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9530,
+      "name": "طبية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9532,
+      "name": "حلوة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9533,
+      "name": "المركز الآلي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9536,
+      "name": "فاديكو",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.1, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9537,
+      "name": "أمواج الدولية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "non-pure" }
+      }
+    },
+    {
+      "ticker": 9538,
+      "name": "نسيج للتقنية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.15, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9539,
+      "name": "أقاسيم",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9540,
+      "name": "تدوير",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9541,
+      "name": "أكاديمية التعليم",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9542,
+      "name": "كير",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9543,
+      "name": "نت وركرس",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.13, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9544,
+      "name": "الرعاية المستقبلية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9545,
+      "name": "الدولية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9546,
+      "name": "نبع الصحة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.12, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9547,
+      "name": "رواسي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.07, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9548,
+      "name": "ابيكو",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9549,
+      "name": "البابطين الغذائية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.06, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9550,
+      "name": "شور",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.08, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9551,
+      "name": "برج المعرفة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9552,
+      "name": "قمة السعودية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.18, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9553,
+      "name": "ملان",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9555,
+      "name": "لين الخير",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9557,
+      "name": "إدارات",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.12, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9558,
+      "name": "القمم",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9559,
+      "name": "بلدي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.1, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9560,
+      "name": "وجا",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9561,
+      "name": "نولجنت",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9562,
+      "name": "بوابة الأطعمة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.12, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9563,
+      "name": "بناء",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "non-pure" }
+      }
+    },
+    {
+      "ticker": 9564,
+      "name": "آفاق الغذاء",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9565,
+      "name": "معيار",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9566,
+      "name": "الصناعات الجيرية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.04, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9567,
+      "name": "غذاء السلطان",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.09, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9568,
+      "name": "ميار",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9569,
+      "name": "آل منيف",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.16, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9570,
+      "name": "تام التنموية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.15, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9571,
+      "name": "مناوله",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.05, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9572,
+      "name": "الرازي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9574,
+      "name": "بروميديكس",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9575,
+      "name": "ماربل ديزاين",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9576,
+      "name": "منزل الورق",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9577,
+      "name": "دار المركبة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9578,
+      "name": "مصاعد أطلس",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.09, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9579,
+      "name": "رماث",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.07, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9580,
+      "name": "الراشد للصناعة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9581,
+      "name": "كلين لايف",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.05, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9583,
+      "name": "المتحدة للتعدين",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.04, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9584,
+      "name": "ريال",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9585,
+      "name": "ملكية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.05, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9586,
+      "name": "أصول وبخيت",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9587,
+      "name": "لانا",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9588,
+      "name": "حديد الرياض",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9589,
+      "name": "فاد",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 2.73, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9591,
+      "name": "فيو",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9592,
+      "name": "المجتمع الطبية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9593,
+      "name": "عبر الخليج",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9594,
+      "name": "المداواة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9595,
+      "name": "وسم",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.12, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9596,
+      "name": "كوارا",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.14, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9597,
+      "name": "الليف",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9598,
+      "name": "المحافظة للتعليم",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9599,
+      "name": "طاقات",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.11, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9600,
+      "name": "كومل",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.07, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9601,
+      "name": "الرشيد",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9602,
+      "name": "يقين",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9603,
+      "name": "الأفق التعليمية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.05, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9604,
+      "name": "ميرال",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.18, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9605,
+      "name": "نفط الشرق",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9606,
+      "name": "ثروة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.08, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9607,
+      "name": "عسق",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9608,
+      "name": "الأشغال الميسرة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9609,
+      "name": "بترول ناس",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9610,
+      "name": "الجادة الأولى",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9611,
+      "name": "المتحدة للزجاج المسطح",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9612,
+      "name": "مياه سما",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9613,
+      "name": "شلفا",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.3, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9614,
+      "name": "نقاوة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9615,
+      "name": "مفيد",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.05, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9617,
+      "name": "ارابيكا ستار",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9618,
+      "name": "الفاخرة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9619,
+      "name": "الأعمال المتعددة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.06, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9620,
+      "name": "بلسم الطيبة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.09, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9621,
+      "name": "دي آر سي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.07, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9622,
+      "name": "شموع الماضي",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9623,
+      "name": "مصنع البتال",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9624,
+      "name": "الشهيلي المعدنية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.04, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9625,
+      "name": "إتمام",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9626,
+      "name": "سمايل كير",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.04, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9627,
+      "name": "طوارئيات",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9628,
+      "name": "لمسات",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9630,
+      "name": "ريشيو",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9631,
+      "name": "هضاب الخليج",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.05, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9632,
+      "name": "رؤية المستقبل",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9633,
+      "name": "آلات الصيانة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.22, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9634,
+      "name": "أدير",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.29, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9635,
+      "name": "دخون",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9636,
+      "name": "الخزامى",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.1, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9637,
+      "name": "الحلول المتسارعة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9639,
+      "name": "أنماط",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9640,
+      "name": "أساس مكين",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9641,
+      "name": "هوية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.04, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9642,
+      "name": "تايم",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9644,
+      "name": "ناف",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.08, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9645,
+      "name": "ساين وورلد",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9647,
+      "name": "وجد الحياة",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9648,
+      "name": "حمد بن سعيدان العقارية",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9649,
+      "name": "جمجوم فاشن",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.14, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9650,
+      "name": "ساحة المجد",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.02, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9651,
+      "name": "التويجري",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.16, "status": "mixed" }
+      }
+    },
+    {
+      "ticker": 9653,
+      "name": "خالد ظافر و اخوانه",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.03, "status": "pure" }
+      }
+    },
+    {
+      "ticker": 9655,
+      "name": "مسقا",
+      "aliases": [],
+      "years": {
+        "2025": { "rate": 0.01, "status": "pure" }
       }
     }
   ],
