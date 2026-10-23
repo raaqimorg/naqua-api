@@ -24,8 +24,8 @@
     "data:format": "node scripts/format-dataset.ts"
   },
   "dependencies": {
-    "@effect/platform-node": "4.0.0",
-    "effect": "4.0.0"
+    "@effect/platform-node": "4.0.5",
+    "effect": "4.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
