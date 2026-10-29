@@ -20,7 +20,7 @@ type Where = { entryIndex: number };
 
 export class UnknownTicker extends Schema.Error<UnknownTicker>('UnknownTicker')(errorFields('UNKNOWN_TICKER'), {
   httpApiStatus: 404,
-  description: '`UNKNOWN_TICKER`',
+  description: '`UNKNOWN_TICKER`: no company with this ticker is in the data. `details` has `ticker`, and `entryIndex` in a calculation.',
 }) {
   static of(ticker: number, where?: Where) {
     return new UnknownTicker(
@@ -36,7 +36,9 @@ export class UnknownTicker extends Schema.Error<UnknownTicker>('UnknownTicker')(
 
 export class AmbiguousTicker extends Schema.Error<AmbiguousTicker>('AmbiguousTicker')(errorFields('AMBIGUOUS_TICKER'), {
   httpApiStatus: 409,
-  description: '`AMBIGUOUS_TICKER`: the data lists several companies under this ticker.',
+  description:
+    '`AMBIGUOUS_TICKER`: the source gives this ticker to more than one company. `details` has `ticker`, the ' +
+    '`candidates` names, and `entryIndex` in a calculation.',
 }) {
   static of(entry: UnresolvedTicker, where?: Where) {
     return new AmbiguousTicker(
@@ -52,7 +54,12 @@ export class AmbiguousTicker extends Schema.Error<AmbiguousTicker>('AmbiguousTic
 
 export class RateNotAvailable extends Schema.Error<RateNotAvailable>('RateNotAvailable')(
   errorFields('RATE_NOT_AVAILABLE'),
-  { httpApiStatus: 404, description: '`RATE_NOT_AVAILABLE`: no rate is published for that year.' },
+  {
+    httpApiStatus: 404,
+    description:
+      '`RATE_NOT_AVAILABLE`: no rate is published for that company and year. `details` has `ticker`, `year`, and ' +
+      '`entryIndex` in a calculation.',
+  },
 ) {
   static of(ticker: number, companyName: string, year: number, where?: Where) {
     return new RateNotAvailable(
@@ -71,7 +78,7 @@ export const MAX_ISSUES = 20;
 
 export class ValidationError extends Schema.Error<ValidationError>('ValidationError')(errorFields('VALIDATION_ERROR'), {
   httpApiStatus: 400,
-  description: `\`VALIDATION_ERROR\`: \`details\` lists the invalid fields, at most ${MAX_ISSUES}.`,
+  description: `\`VALIDATION_ERROR\`: the request is invalid. \`details\` lists up to ${MAX_ISSUES} \`{ path, message }\` items, and is absent when the body is not valid JSON.`,
 }) {
   static of(issues: { path: string; message: string }[]) {
     return new ValidationError(
@@ -97,7 +104,7 @@ export class ValidationError extends Schema.Error<ValidationError>('ValidationEr
 
 export class PayloadTooLarge extends Schema.Error<PayloadTooLarge>('PayloadTooLarge')(errorFields('PAYLOAD_TOO_LARGE'), {
   httpApiStatus: 413,
-  description: '`PAYLOAD_TOO_LARGE`: the body is over 100 KB.',
+  description: '`PAYLOAD_TOO_LARGE`: the body is over 100 KiB. Split the holdings across requests.',
 }) {
   static of() {
     return new PayloadTooLarge(
@@ -108,7 +115,7 @@ export class PayloadTooLarge extends Schema.Error<PayloadTooLarge>('PayloadTooLa
 
 export class RateLimited extends Schema.Error<RateLimited>('RateLimited')(errorFields('RATE_LIMITED'), {
   httpApiStatus: 429,
-  description: '`RATE_LIMITED`: `Retry-After` says when to try again.',
+  description: '`RATE_LIMITED`: too many requests from this IP address. Retry after the seconds in `Retry-After`.',
 }) {
   static of(limit: number, secondsUntilReset: number) {
     return new RateLimited(
