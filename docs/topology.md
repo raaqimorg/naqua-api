@@ -23,7 +23,7 @@ The trynaqua.com website has its own copy of the calculator, in a separate repos
 
 ```mermaid
 flowchart LR
-    client["Client"] -->|"api.trynaqua.com"| render["Render<br/>web service naqua-api<br/>Frankfurt, free plan"]
+    client["Client"] -->|"api.trynaqua.com"| render["Render<br/>web service naqua-api<br/>Frankfurt, 0.5c-512mb plan"]
     render --> node["One Node 24 process<br/>node src/server.ts"]
     node --> memory[("Dataset in memory<br/>loaded at startup")]
     node --> limiter[("Rate-limit windows<br/>in memory")]
@@ -36,7 +36,7 @@ flowchart LR
 - **Client addresses.** Render sets `RENDER=true`, and then the limiter keys on `CF-Connecting-IP`, which Render's public ingress overwrites. Anywhere else, or when that header is missing or invalid, it keys on the socket address. It never trusts `X-Forwarded-For`.
 - **Health check.** Render polls `/health`, which sits outside the rate limit.
 - **Logs.** Each request writes one JSON line to stdout, and Render keeps those lines for a limited time. Passing health checks are left out. With the `OTEL_*` variables set, the lines are also exported over OTLP, as the README describes.
-- **Cold starts.** On the free plan, the service sleeps after about 15 idle minutes, and the next request waits for it to start.
+- **Memory.** The plan has 512 MB, and the server peaks near 200 MB. Start it with `node`, not `pnpm run start`: pnpm checks the installed dependencies against its supply-chain policies before running a script, and on Render that check alone ran out of memory.
 - **The docs page.** `/docs` is served by the API, but the browser loads Scalar's script from `cdn.jsdelivr.net`, at the version pinned in `SCALAR_VERSION` (`src/app.ts`).
 
 ## A request
