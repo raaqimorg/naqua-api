@@ -3,7 +3,7 @@ services:
   - type: web
     name: naqua-api
     runtime: node
-    plan: free
+    plan: 0.5c-512mb
     # Frankfurt is the closest Render region to Saudi Arabia.
     region: frankfurt
     branch: main
