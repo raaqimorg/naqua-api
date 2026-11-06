@@ -131,6 +131,9 @@ const cases: Record<string, Case> = {
   'unknown route': { requests: [['/v2/nothing?x=1']] },
   'unknown route under /v1': { requests: [['/v1/nothing']] },
   'wrong method': { requests: [['/v1/meta', post({})]] },
+  'wrong method: GET on calculate': { requests: [[CALCULATE]] },
+  'wrong method on an unknown path': { requests: [['/v1/nothing', post({})]] },
+  'robots.txt': { requests: [['/robots.txt']] },
   'unexpected failure': {
     dataset: {
       ...dataset,

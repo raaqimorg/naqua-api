@@ -22,8 +22,10 @@ pnpm data:format    # validate data/companies.json and restore its canonical lay
   static `layer`. The domain (`src/domain`) stays plain functions.
 - **API errors are the envelope.** Each is a `Schema.Error` class whose fields
   are the `{ error: { code, message, details } }` body, with its status as
-  `httpApiStatus`. Only `RouterMiddleware` builds an error response by hand, for
-  the two cases no endpoint sees: an unknown route and a defect.
+  `httpApiStatus`. Only `routerMiddleware` builds an error response by hand, for
+  the cases no endpoint sees: an unknown route, a known path with the wrong
+  method (405, from the route list `knownRoutes` in `src/app.ts` builds), and a
+  defect.
   An endpoint that takes params, a query or a payload needs
   `.middleware(RequestValidation)`; without it a bad request gets a 500, not a 400.
 - **Behaviour belongs to endpoints, not paths.** What applies to some endpoints
@@ -36,7 +38,7 @@ pnpm data:format    # validate data/companies.json and restore its canonical lay
   set `SCALAR_VERSION` in `src/app.ts` to the Scalar version it bundles. Import
   `@effect/platform-node` by module (`@effect/platform-node/NodeRuntime`): its
   index also loads a Redis client.
-- **Logs hold no personal data.** The request log in `RouterMiddleware` records
+- **Logs hold no personal data.** The request log in `routerMiddleware` records
   the method, path, status, duration, user agent, `Origin` and error code. Never
   add the client's address, the query string, the request body, or other headers,
   and clip any text a caller sends. `test/logging.test.ts` checks this. Export

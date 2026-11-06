@@ -464,6 +464,40 @@ describe('the rest of the surface', () => {
     assert.equal((await json(response)).error.code, 'NOT_FOUND');
   });
 
+  test('answers 405 with the allowed methods when the path exists', async () => {
+    const cases: [path: string, method: string, allowed: string[]][] = [
+      ['/v1/purification/calculate', 'GET', ['POST']],
+      ['/v1/purification/calculate', 'HEAD', ['POST']],
+      ['/v1/meta', 'POST', ['GET', 'HEAD']],
+      ['/V1/META/?x=1', 'DELETE', ['GET', 'HEAD']],
+      ['/v1/companies/2330/rates/2023', 'POST', ['GET', 'HEAD']],
+      ['/docs', 'POST', ['GET', 'HEAD']],
+      ['/robots.txt', 'PUT', ['GET', 'HEAD']],
+    ];
+    for (const [path, method, allowed] of cases) {
+      const response = await app.request(path, { method });
+      assert.equal(response.status, 405, `${method} ${path}`);
+      assert.equal(response.headers.get('Allow'), allowed.join(', '), `${method} ${path}`);
+      if (method === 'HEAD') continue;
+      const { error } = await json(response);
+      assert.equal(error.code, 'METHOD_NOT_ALLOWED');
+      assert.deepEqual(error.details, { allowed });
+    }
+  });
+
+  test('still 404s a wrong method on a path that does not exist', async () => {
+    const response = await app.request('/v1/nothing', { method: 'POST' });
+    assert.equal(response.status, 404);
+    assert.equal((await json(response)).error.code, 'NOT_FOUND');
+  });
+
+  test('serves robots.txt, keeping crawlers off the data endpoints', async () => {
+    const response = await get('/robots.txt');
+    assert.equal(response.status, 200);
+    assert.match(response.headers.get('Content-Type') ?? '', /^text\/plain/);
+    assert.equal(await response.text(), 'User-agent: *\nDisallow: /v1/\n');
+  });
+
   test('counts every spelling of a path that reaches an endpoint', async () => {
     const limited = makeTestApp({ dataset, requestsPerMinute: 1, now: () => 0 });
     assert.equal((await limited.request('/v1/meta')).status, 200);

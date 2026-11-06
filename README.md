@@ -154,6 +154,7 @@ The codes are stable.
 | `PAYLOAD_TOO_LARGE`  | 413                                   |
 | `RATE_LIMITED`       | 429                                   |
 | `NOT_FOUND`          | 404, for a route that does not exist  |
+| `METHOD_NOT_ALLOWED` | 405, with the methods in `Allow`      |
 | `INTERNAL_ERROR`     | 500                                   |
 
 An oversized request that declares its content length gets 413. On the Node server, an oversized chunked upload can close the connection before an error response is sent.
