@@ -1,5 +1,6 @@
 import { ByteSize, Clock, Effect, Layer } from 'effect';
 import {
+  FindMyWay,
   HttpEffect,
   HttpIncomingMessage,
   HttpMiddleware,
@@ -38,8 +39,40 @@ const cors = HttpMiddleware.cors({
 
 const json = (status: number, body: unknown) => HttpServerResponse.jsonUnsafe(body, { status });
 
+export interface KnownRoute {
+  readonly method: string;
+  readonly path: string;
+}
+
+// The methods a path takes, matched the way the router matches it: case
+// ignored, a trailing or doubled slash ignored. A path that takes GET takes HEAD.
+const allowedMethods = (routes: ReadonlyArray<KnownRoute>) => {
+  const router = FindMyWay.make<true>();
+  for (const { method, path } of routes) router.on(method, path as FindMyWay.PathInput, true);
+  const methods = [...new Set(routes.map(({ method }) => method))];
+  return (url: string): Array<string> => {
+    const allowed = methods.filter((method) => router.find(method, url) !== undefined);
+    return allowed.includes('GET') ? [...allowed, 'HEAD'] : allowed;
+  };
+};
+
 const notFound = ({ method, url }: HttpServerRequest.HttpServerRequest) =>
   json(404, errorBody('NOT_FOUND', 'المسار غير موجود.', `No route for ${method} ${url.replace(/\?.*$/s, '')}.`));
+
+const methodNotAllowed = ({ method, url }: HttpServerRequest.HttpServerRequest, allowed: Array<string>) =>
+  HttpServerResponse.setHeader(
+    json(
+      405,
+      errorBody(
+        'METHOD_NOT_ALLOWED',
+        `هذا المسار لا يقبل ${method}. استخدم: ${allowed.join('، ')}.`,
+        `${url.replace(/\?.*$/s, '')} does not take ${method}. Use ${allowed.join(', ')}.`,
+        { allowed },
+      ),
+    ),
+    'Allow',
+    allowed.join(', '),
+  );
 
 const internalError = json(500, errorBody('INTERNAL_ERROR', 'حدث خطأ غير متوقع.', 'An unexpected error occurred.'));
 
@@ -83,29 +116,38 @@ const logRequest = (request: HttpServerRequest.HttpServerRequest, response: Http
 };
 
 // CORS answers a preflight itself. Any other response gets the security
-// headers, and what the router answers on its own, an unknown route or a
-// defect, gets the error envelope. Every response is then logged.
-export const RouterMiddleware = HttpRouter.middleware<{ handles: HttpServerError.HttpServerError }>()(
-  (app) =>
-    Effect.gen(function* () {
-      const request = yield* HttpServerRequest.HttpServerRequest;
-      const clock = yield* Clock.Clock;
-      const start = clock.currentTimeNanosUnsafe();
-      const response = yield* cors(
-        app.pipe(
-          Effect.catchIf(HttpServerError.isHttpServerError, (error) =>
-            error.reason._tag === 'RouteNotFound' ? Effect.succeed(notFound(error.request)) : Effect.die(error),
+// headers, and what the router answers on its own, an unknown route, a known
+// path with the wrong method, or a defect, gets the error envelope. Every
+// response is then logged.
+export const routerMiddleware = (routes: ReadonlyArray<KnownRoute>) => {
+  const allowedFor = allowedMethods(routes);
+  const unmatched = (request: HttpServerRequest.HttpServerRequest) => {
+    const allowed = allowedFor(request.url);
+    return allowed.length === 0 ? notFound(request) : methodNotAllowed(request, allowed);
+  };
+
+  return HttpRouter.middleware<{ handles: HttpServerError.HttpServerError }>()(
+    (app) =>
+      Effect.gen(function* () {
+        const request = yield* HttpServerRequest.HttpServerRequest;
+        const clock = yield* Clock.Clock;
+        const start = clock.currentTimeNanosUnsafe();
+        const response = yield* cors(
+          app.pipe(
+            Effect.catchIf(HttpServerError.isHttpServerError, (error) =>
+              error.reason._tag === 'RouteNotFound' ? Effect.succeed(unmatched(error.request)) : Effect.die(error),
+            ),
+            Effect.catchDefect((defect) => Effect.as(Effect.logError('Unexpected failure', defect), internalError)),
+            Effect.map(HttpServerResponse.setHeaders(SECURITY_HEADERS)),
           ),
-          Effect.catchDefect((defect) => Effect.as(Effect.logError('Unexpected failure', defect), internalError)),
-          Effect.map(HttpServerResponse.setHeaders(SECURITY_HEADERS)),
-        ),
-      );
-      const durationMs = Number(clock.currentTimeNanosUnsafe() - start) / 1e6;
-      yield* logRequest(request, response, durationMs);
-      return response;
-    }),
-  { global: true },
-);
+        );
+        const durationMs = Number(clock.currentTimeNanosUnsafe() - start) / 1e6;
+        yield* logRequest(request, response, durationMs);
+        return response;
+      }),
+    { global: true },
+  );
+};
 
 // Headers for whatever response the request ends with, including a typed error
 // that the API encodes after the middleware has returned.

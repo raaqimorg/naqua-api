@@ -327,6 +327,7 @@ Every error has the same shape:
 | \`PAYLOAD_TOO_LARGE\` | 413 | The body is over ${MAX_BODY_BYTES / 1024} KiB. | | Split the request. |
 | \`RATE_LIMITED\` | 429 | Too many requests. | | Wait for \`Retry-After\` seconds. |
 | \`NOT_FOUND\` | 404 | No such route. | | Check the method and path. |
+| \`METHOD_NOT_ALLOWED\` | 405 | The path exists but does not take this method. | \`allowed\` (methods), also in the \`Allow\` header. | Use one of the allowed methods. |
 | \`INTERNAL_ERROR\` | 500 | An unexpected error. | | Retry later. |
 
 \`entryIndex\` appears only on calculation errors, and it is the position of the failing entry in \`entries\`.
